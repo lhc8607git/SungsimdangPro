@@ -1,0 +1,23 @@
+package domain;
+
+import java.sql.Date;
+
+public class Order {
+	String orderCode; 
+	String prdCode; 
+	String deslistCode; 
+	String exchcouponCode; 
+	String cartCode; 
+	String hcouponCode; 
+	Date orderDate; 
+	int orderPrice; 
+	int discountPrice; 
+	int totalpaymentPrice; 
+	String shippingState; 
+	String paymentOption; 
+	int reservePrice; 
+	Date shippingwishDate; 
+	String shippingTime; 
+	String requestOrder; 
+
+}

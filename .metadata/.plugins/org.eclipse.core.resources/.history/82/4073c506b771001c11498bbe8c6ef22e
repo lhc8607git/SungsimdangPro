@@ -1,0 +1,29 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<form name="Frm" method="post" enctype="multipart/form-data" autocomplete="off">
+
+	<input id="chkID" name="chkID" class="text" maxlength="25" type="text" placeholder="아이디 입력 *" style="ime-mode:disabled; ;" value=""  onblur="idCheck();"  autocomplete="off" autofocus/>
+	<div id="span_chkID" ></div>
+	<div id="checkId"></div>
+	
+	</form>
+	
+	<script>
+		function idCheck() {
+			var id = $("#chkID").val();
+			console.log(id);
+			console.log("t");
+		}
+	</script>
+
+
+</body>
+</html>

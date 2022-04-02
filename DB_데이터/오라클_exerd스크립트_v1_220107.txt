@@ -1,0 +1,2039 @@
+/* 1:1문의 */
+CREATE TABLE inquire (
+   inquire_code VARCHAR2(20) NOT NULL, /* 1:1문의 코드 */
+   memb_code VARCHAR2(100), /* 회원ID */
+   title VARCHAR2(100), /* 제목 */
+   category VARCHAR2(30), /* 분류 */
+   content VARCHAR2(4000), /* 문의 내용 */
+   img VARCHAR2(100), /* 이미지 첨부 */
+   inquire_date DATE /* 작성날짜 */
+);
+
+COMMENT ON TABLE inquire IS '1:1문의';
+
+COMMENT ON COLUMN inquire.inquire_code IS '1:1문의 코드';
+
+COMMENT ON COLUMN inquire.memb_code IS '회원ID';
+
+COMMENT ON COLUMN inquire.title IS '제목';
+
+COMMENT ON COLUMN inquire.category IS '분류';
+
+COMMENT ON COLUMN inquire.content IS '문의 내용';
+
+COMMENT ON COLUMN inquire.img IS '이미지 첨부';
+
+COMMENT ON COLUMN inquire.inquire_date IS '작성날짜';
+
+CREATE UNIQUE INDEX PK_inquire
+   ON inquire (
+      inquire_code ASC
+   );
+
+ALTER TABLE inquire
+   ADD
+      CONSTRAINT PK_inquire
+      PRIMARY KEY (
+         inquire_code
+      );
+
+/* 1:1문의 관리 */
+CREATE TABLE inquireManage (
+   inquiremanage_code VARCHAR2(20) NOT NULL, /* 1:1문의 관리 코드 */
+   inquire_code VARCHAR2(20), /* 1:1문의 코드 */
+   manager_code VARCHAR2(20), /* 관리자ID */
+   is_response NUMBER(1), /* 답변 여부 */
+   response_content VARCHAR2(4000), /* 답변 내용 */
+   response_date DATE /* 답변 날짜 */
+);
+
+COMMENT ON TABLE inquireManage IS '1:1문의 관리';
+
+COMMENT ON COLUMN inquireManage.inquiremanage_code IS '1:1문의 관리 코드';
+
+COMMENT ON COLUMN inquireManage.inquire_code IS '1:1문의 코드';
+
+COMMENT ON COLUMN inquireManage.manager_code IS '관리자ID';
+
+COMMENT ON COLUMN inquireManage.is_response IS '답변 여부';
+
+COMMENT ON COLUMN inquireManage.response_content IS '답변 내용';
+
+COMMENT ON COLUMN inquireManage.response_date IS '답변 날짜';
+
+CREATE UNIQUE INDEX PK_inquireManage
+   ON inquireManage (
+      inquiremanage_code ASC
+   );
+
+ALTER TABLE inquireManage
+   ADD
+      CONSTRAINT PK_inquireManage
+      PRIMARY KEY (
+         inquiremanage_code
+      );
+
+/* FAQ */
+CREATE TABLE faq (
+   faq_code VARCHAR2(20) NOT NULL, /* FAQ코드 */
+   manager_code VARCHAR2(20), /* 관리자ID */
+   title VARCHAR2(100), /* 제목 */
+   content VARCHAR2(4000) /* 내용 */
+);
+
+COMMENT ON TABLE faq IS 'FAQ';
+
+COMMENT ON COLUMN faq.faq_code IS 'FAQ코드';
+
+COMMENT ON COLUMN faq.manager_code IS '관리자ID';
+
+COMMENT ON COLUMN faq.title IS '제목';
+
+COMMENT ON COLUMN faq.content IS '내용';
+
+CREATE UNIQUE INDEX PK_faq
+   ON faq (
+      faq_code ASC
+   );
+
+ALTER TABLE faq
+   ADD
+      CONSTRAINT PK_faq
+      PRIMARY KEY (
+         faq_code
+      );
+
+/* 공지사항 */
+CREATE TABLE notice (
+   notice_code VARCHAR2(20) NOT NULL, /* 공지사항코드 */
+   manager_code VARCHAR2(20), /* 관리자ID */
+   title VARCHAR2(100), /* 제목 */
+   content VARCHAR2(4000), /* 내용 */
+   view_count NUMBER(7), /* 조회수 */
+   create_date DATE, /* 작성일 */
+   is_fix NUMBER(1), /* 게시글 고정여부 */
+   img VARCHAR2(100) /* 이미지 첨부 */
+);
+
+COMMENT ON TABLE notice IS '공지사항';
+
+COMMENT ON COLUMN notice.notice_code IS '공지사항코드';
+
+COMMENT ON COLUMN notice.manager_code IS '관리자ID';
+
+COMMENT ON COLUMN notice.title IS '제목';
+
+COMMENT ON COLUMN notice.content IS '내용';
+
+COMMENT ON COLUMN notice.view_count IS '조회수';
+
+COMMENT ON COLUMN notice.create_date IS '작성일';
+
+COMMENT ON COLUMN notice.is_fix IS '게시글 고정여부';
+
+COMMENT ON COLUMN notice.img IS '이미지 첨부';
+
+CREATE UNIQUE INDEX PK_notice
+   ON notice (
+      notice_code ASC
+   );
+
+ALTER TABLE notice
+   ADD
+      CONSTRAINT PK_notice
+      PRIMARY KEY (
+         notice_code
+      );
+
+/* 관리자 */
+CREATE TABLE manager (
+   manager_code VARCHAR2(20) NOT NULL, /* 관리자ID */
+   password VARCHAR2(100), /* 비밀번호 */
+   create_date DATE /* 생성일 */
+);
+
+COMMENT ON TABLE manager IS '관리자';
+
+COMMENT ON COLUMN manager.manager_code IS '관리자ID';
+
+COMMENT ON COLUMN manager.password IS '비밀번호';
+
+COMMENT ON COLUMN manager.create_date IS '생성일';
+
+CREATE UNIQUE INDEX PK_manager
+   ON manager (
+      manager_code ASC
+   );
+
+ALTER TABLE manager
+   ADD
+      CONSTRAINT PK_manager
+      PRIMARY KEY (
+         manager_code
+      );
+
+/* 광고 */
+CREATE TABLE AD (
+   ad_code VARCHAR2(20) NOT NULL, /* 광고코드 */
+   manager_code VARCHAR2(20), /* 관리자ID */
+   title VARCHAR2(100), /* 제목 */
+   create_date DATE, /* 등록일 */
+   content VARCHAR2(100) /* 내용 */
+);
+
+COMMENT ON TABLE AD IS '광고';
+
+COMMENT ON COLUMN AD.ad_code IS '광고코드';
+
+COMMENT ON COLUMN AD.manager_code IS '관리자ID';
+
+COMMENT ON COLUMN AD.title IS '제목';
+
+COMMENT ON COLUMN AD.create_date IS '등록일';
+
+COMMENT ON COLUMN AD.content IS '내용';
+
+CREATE UNIQUE INDEX PK_AD
+   ON AD (
+      ad_code ASC
+   );
+
+ALTER TABLE AD
+   ADD
+      CONSTRAINT PK_AD
+      PRIMARY KEY (
+         ad_code
+      );
+
+/* 교환/AS내역 */
+CREATE TABLE exchangeList (
+   exchange_code VARCHAR2(30) NOT NULL, /* 교환/AS내역 코드 */
+   order_code VARCHAR2(20), /* 주문번호 */
+   memb_code VARCHAR2(100), /* 회원ID */
+   order_date DATE, /* 주문일자 */
+   prd_name VARCHAR2(40), /* 상품명 */
+   shipping_way VARCHAR2(40), /* 배송수단 */
+   order_amount NUMBER(7), /* 주문금액 */
+   progress_status VARCHAR2(20) /* 진행현황 */
+);
+
+COMMENT ON TABLE exchangeList IS '교환/AS내역';
+
+COMMENT ON COLUMN exchangeList.exchange_code IS '교환/AS내역 코드';
+
+COMMENT ON COLUMN exchangeList.order_code IS '주문번호';
+
+COMMENT ON COLUMN exchangeList.memb_code IS '회원ID';
+
+COMMENT ON COLUMN exchangeList.order_date IS '주문일자';
+
+COMMENT ON COLUMN exchangeList.prd_name IS '상품명';
+
+COMMENT ON COLUMN exchangeList.shipping_way IS '배송수단';
+
+COMMENT ON COLUMN exchangeList.order_amount IS '주문금액';
+
+COMMENT ON COLUMN exchangeList.progress_status IS '진행현황';
+
+CREATE UNIQUE INDEX PK_exchangeList
+   ON exchangeList (
+      exchange_code ASC
+   );
+
+ALTER TABLE exchangeList
+   ADD
+      CONSTRAINT PK_exchangeList
+      PRIMARY KEY (
+         exchange_code
+      );
+
+/* 기프티콘주문 */
+CREATE TABLE giftOrder (
+   prd_code VARCHAR2(30) NOT NULL /* 상품코드 */
+);
+
+COMMENT ON TABLE giftOrder IS '기프티콘주문';
+
+COMMENT ON COLUMN giftOrder.prd_code IS '상품코드';
+
+CREATE UNIQUE INDEX PK_giftOrder
+   ON giftOrder (
+      prd_code ASC
+   );
+
+ALTER TABLE giftOrder
+   ADD
+      CONSTRAINT PK_giftOrder
+      PRIMARY KEY (
+         prd_code
+      );
+
+/* 매장 */
+CREATE TABLE store (
+   store_code VARCHAR2(20) NOT NULL, /* 매장코드 */
+   manager_code VARCHAR2(20), /* 관리자ID */
+   is_global NUMBER(1), /* 국내/해외 여부 */
+   region VARCHAR2(20), /* 지역 */
+   name VARCHAR2(40), /* 매장명 */
+   brand VARCHAR2(40), /* 브랜드 */
+   tel VARCHAR2(15), /* 전화번호 */
+   address VARCHAR2(100), /* 주소 */
+   operating_time VARCHAR2(60), /* 운영시간 */
+   lat VARCHAR2(20), /* 위도 */
+   lng VARCHAR2(20) /* 경도 */
+);
+
+COMMENT ON TABLE store IS '매장';
+
+COMMENT ON COLUMN store.store_code IS '매장코드';
+
+COMMENT ON COLUMN store.manager_code IS '관리자ID';
+
+COMMENT ON COLUMN store.is_global IS '국내/해외 여부';
+
+COMMENT ON COLUMN store.region IS '지역';
+
+COMMENT ON COLUMN store.name IS '매장명';
+
+COMMENT ON COLUMN store.brand IS '브랜드';
+
+COMMENT ON COLUMN store.tel IS '전화번호';
+
+COMMENT ON COLUMN store.address IS '주소';
+
+COMMENT ON COLUMN store.operating_time IS '운영시간';
+
+COMMENT ON COLUMN store.lat IS '위도';
+
+COMMENT ON COLUMN store.lng IS '경도';
+
+CREATE UNIQUE INDEX PK_store
+   ON store (
+      store_code ASC
+   );
+
+ALTER TABLE store
+   ADD
+      CONSTRAINT PK_store
+      PRIMARY KEY (
+         store_code
+      );
+
+/* 모바일 상품 교환권 */
+CREATE TABLE exchCoupon (
+   exchcoupon_code VARCHAR2(20) NOT NULL, /* 모바일 상품 교환권 코드 */
+   prd_code VARCHAR2(30) /* 상품코드 */
+);
+
+COMMENT ON TABLE exchCoupon IS '모바일 상품 교환권';
+
+COMMENT ON COLUMN exchCoupon.exchcoupon_code IS '모바일 상품 교환권 코드';
+
+COMMENT ON COLUMN exchCoupon.prd_code IS '상품코드';
+
+CREATE UNIQUE INDEX PK_exchCoupon
+   ON exchCoupon (
+      exchcoupon_code ASC
+   );
+
+ALTER TABLE exchCoupon
+   ADD
+      CONSTRAINT PK_exchCoupon
+      PRIMARY KEY (
+         exchcoupon_code
+      );
+
+/* 배송 가능 분류 */
+CREATE TABLE shipOption (
+   prd_code VARCHAR2(30) NOT NULL, /* 상품코드 */
+   delivery_option NUMBER(1) NOT NULL, /* 택배 배송 가능 여부 */
+   daejeon_option NUMBER(1) NOT NULL, /* 대전 배송 가능 여부 */
+   ktx_option NUMBER(1) NOT NULL, /* KTX 배송 가능 여부 */
+   pickup_option NUMBER(1) NOT NULL /* 방문 수령 가능 여부 */
+);
+
+COMMENT ON TABLE shipOption IS '배송 가능 분류';
+
+COMMENT ON COLUMN shipOption.prd_code IS '상품코드';
+
+COMMENT ON COLUMN shipOption.delivery_option IS '택배 배송 가능 여부';
+
+COMMENT ON COLUMN shipOption.daejeon_option IS '대전 배송 가능 여부';
+
+COMMENT ON COLUMN shipOption.ktx_option IS 'KTX 배송 가능 여부';
+
+COMMENT ON COLUMN shipOption.pickup_option IS '방문 수령 가능 여부';
+
+CREATE UNIQUE INDEX PK_shipOption
+   ON shipOption (
+      prd_code ASC
+   );
+
+ALTER TABLE shipOption
+   ADD
+      CONSTRAINT PK_shipOption
+      PRIMARY KEY (
+         prd_code
+      );
+
+/* 배송지 목록 */
+CREATE TABLE desList (
+   deslist_code VARCHAR2(30) NOT NULL, /* 배송지 목록 코드 */
+   desinfo_code VARCHAR2(30), /* 배송지코드 */
+   memb_code VARCHAR2(100), /* 회원ID */
+   is_default NUMBER(1) /* 기본 배송지 설정 여부 */
+);
+
+COMMENT ON TABLE desList IS '배송지 목록';
+
+COMMENT ON COLUMN desList.deslist_code IS '배송지 목록 코드';
+
+COMMENT ON COLUMN desList.desinfo_code IS '배송지코드';
+
+COMMENT ON COLUMN desList.memb_code IS '회원ID';
+
+COMMENT ON COLUMN desList.is_default IS '기본 배송지 설정 여부';
+
+CREATE UNIQUE INDEX PK_desList
+   ON desList (
+      deslist_code ASC
+   );
+
+ALTER TABLE desList
+   ADD
+      CONSTRAINT PK_desList
+      PRIMARY KEY (
+         deslist_code
+      );
+
+/* 배송지 정보 */
+CREATE TABLE desInfo (
+   desinfo_code VARCHAR2(30) NOT NULL, /* 배송지코드 */
+   des_name VARCHAR2(30), /* 배송지명 */
+   receiver VARCHAR2(30), /* 받으시는분 성함 */
+   tel VARCHAR2(15), /* 연락처 */
+   address VARCHAR2(200) /* 주소 */
+);
+
+COMMENT ON TABLE desInfo IS '배송지 정보';
+
+COMMENT ON COLUMN desInfo.desinfo_code IS '배송지코드';
+
+COMMENT ON COLUMN desInfo.des_name IS '배송지명';
+
+COMMENT ON COLUMN desInfo.receiver IS '받으시는분 성함';
+
+COMMENT ON COLUMN desInfo.tel IS '연락처';
+
+COMMENT ON COLUMN desInfo.address IS '주소';
+
+CREATE UNIQUE INDEX PK_desInfo
+   ON desInfo (
+      desinfo_code ASC
+   );
+
+ALTER TABLE desInfo
+   ADD
+      CONSTRAINT PK_desInfo
+      PRIMARY KEY (
+         desinfo_code
+      );
+
+/* 베스트 */
+CREATE TABLE bestPrd (
+   prd_code VARCHAR2(30) NOT NULL /* 상품코드 */
+);
+
+COMMENT ON TABLE bestPrd IS '베스트';
+
+COMMENT ON COLUMN bestPrd.prd_code IS '상품코드';
+
+CREATE UNIQUE INDEX PK_bestPrd
+   ON bestPrd (
+      prd_code ASC
+   );
+
+ALTER TABLE bestPrd
+   ADD
+      CONSTRAINT PK_bestPrd
+      PRIMARY KEY (
+         prd_code
+      );
+
+/* 보유 적립금 */
+CREATE TABLE mileage (
+   mileage_code VARCHAR2(20) NOT NULL, /* 보유적립코드 */
+   memb_code VARCHAR2(100), /* 회원ID */
+   mileagekind_code VARCHAR2(20), /* 적립금 종류 코드 */
+   order_code VARCHAR2(20), /* 주문번호 */
+   create_date DATE, /* 발생 일자 */
+   use_mileage NUMBER(5), /* 적립금 사용 금액 */
+   total_mileage NUMBER(6) /* 총 적립금 보유 금액 */
+);
+
+COMMENT ON TABLE mileage IS '보유 적립금';
+
+COMMENT ON COLUMN mileage.mileage_code IS '보유적립코드';
+
+COMMENT ON COLUMN mileage.memb_code IS '회원ID';
+
+COMMENT ON COLUMN mileage.mileagekind_code IS '적립금 종류 코드';
+
+COMMENT ON COLUMN mileage.order_code IS '주문번호';
+
+COMMENT ON COLUMN mileage.create_date IS '발생 일자';
+
+COMMENT ON COLUMN mileage.use_mileage IS '적립금 사용 금액';
+
+COMMENT ON COLUMN mileage.total_mileage IS '총 적립금 보유 금액';
+
+CREATE UNIQUE INDEX mileage
+   ON mileage (
+      mileage_code ASC
+   );
+
+ALTER TABLE mileage
+   ADD
+      CONSTRAINT mileage
+      PRIMARY KEY (
+         mileage_code
+      );
+
+/* 보유쿠폰 */
+CREATE TABLE holdCoupon (
+   hcoupon_code VARCHAR2(20) NOT NULL, /* 보유 쿠폰 코드 */
+   coupon_code VARCHAR2(20), /* 쿠폰코드 */
+   memb_code VARCHAR2(100) /* 회원ID */
+);
+
+COMMENT ON TABLE holdCoupon IS '보유쿠폰';
+
+COMMENT ON COLUMN holdCoupon.hcoupon_code IS '보유 쿠폰 코드';
+
+COMMENT ON COLUMN holdCoupon.coupon_code IS '쿠폰코드';
+
+COMMENT ON COLUMN holdCoupon.memb_code IS '회원ID';
+
+CREATE UNIQUE INDEX PK_holdCoupon
+   ON holdCoupon (
+      hcoupon_code ASC
+   );
+
+ALTER TABLE holdCoupon
+   ADD
+      CONSTRAINT PK_holdCoupon
+      PRIMARY KEY (
+         hcoupon_code
+      );
+
+/* 불편사항 종류 */
+CREATE TABLE claimType (
+   claim_code VARCHAR2(20) NOT NULL, /* 불편사항코드 */
+   claim_name VARCHAR2(50) /* 불편사항 명 */
+);
+
+COMMENT ON TABLE claimType IS '불편사항 종류';
+
+COMMENT ON COLUMN claimType.claim_code IS '불편사항코드';
+
+COMMENT ON COLUMN claimType.claim_name IS '불편사항 명';
+
+CREATE UNIQUE INDEX PK_claimType
+   ON claimType (
+      claim_code ASC
+   );
+
+ALTER TABLE claimType
+   ADD
+      CONSTRAINT PK_claimType
+      PRIMARY KEY (
+         claim_code
+      );
+
+/* 사용가능 쿠폰 */
+CREATE TABLE availCoupon (
+   hcoupon_code VARCHAR2(20) NOT NULL /* 보유 쿠폰 코드 */
+);
+
+COMMENT ON TABLE availCoupon IS '사용가능 쿠폰';
+
+COMMENT ON COLUMN availCoupon.hcoupon_code IS '보유 쿠폰 코드';
+
+CREATE UNIQUE INDEX PK_availCoupon
+   ON availCoupon (
+      hcoupon_code ASC
+   );
+
+ALTER TABLE availCoupon
+   ADD
+      CONSTRAINT PK_availCoupon
+      PRIMARY KEY (
+         hcoupon_code
+      );
+
+/* 상품 */
+CREATE TABLE product (
+   prd_code VARCHAR2(30) NOT NULL, /* 상품코드 */
+   cat_code VARCHAR2(30), /* 카테고리중코드 */
+   stock NUMBER(1), /* 품절 여부 */
+   prd_name VARCHAR2(100), /* 상품명 */
+   prd_info VARCHAR2(1000), /* 상품소개 */
+   detail_content VARCHAR2(4000), /* 상세설명 */
+   detail_content2 VARCHAR2(4000), /* 상세설명2 */
+   detail_content3 VARCHAR2(4000), /* 상세설명3 */
+   detail_content4 VARCHAR2(4000), /* 상세설명4 */
+   prd_prc NUMBER(6), /* 가격 */
+   prd_point NUMBER(6), /* 적립금 */
+   rating NUMBER(1), /* 평점 */
+   exp_date VARCHAR2(100), /* 유통기한 */
+   prd_str VARCHAR2(50), /* 보관방법 */
+   shipping_price NUMBER(4), /* 배송비 */
+   prd_size VARCHAR2(50), /* 사이즈 */
+   is_sideoption NUMBER(1), /* 사이드 상품여부 */
+   side_optionname VARCHAR2(30), /* 사이드 추가상품 */
+   allergy_info VARCHAR2(4000), /* 알레르기정보 */
+   ingredient_info VARCHAR2(4000), /* 성분표시 */
+   discount_rate NUMBER(6), /* 할인율 */
+   sales NUMBER(10), /* 판매 수량 */
+   is_giftcard NUMBER(1) /* 기프티콘사용가능여부 */
+);
+
+COMMENT ON TABLE product IS '상품';
+
+COMMENT ON COLUMN product.prd_code IS '상품코드';
+
+COMMENT ON COLUMN product.cat_code IS '카테고리중코드';
+
+COMMENT ON COLUMN product.stock IS '품절 여부';
+
+COMMENT ON COLUMN product.prd_name IS '상품명';
+
+COMMENT ON COLUMN product.prd_info IS '상품소개';
+
+COMMENT ON COLUMN product.detail_content IS '상세설명';
+
+COMMENT ON COLUMN product.detail_content2 IS '상세설명2';
+
+COMMENT ON COLUMN product.detail_content3 IS '상세설명3';
+
+COMMENT ON COLUMN product.detail_content4 IS '상세설명4';
+
+COMMENT ON COLUMN product.prd_prc IS '가격';
+
+COMMENT ON COLUMN product.prd_point IS '적립금';
+
+COMMENT ON COLUMN product.rating IS '평점';
+
+COMMENT ON COLUMN product.exp_date IS '유통기한';
+
+COMMENT ON COLUMN product.prd_str IS '보관방법';
+
+COMMENT ON COLUMN product.shipping_price IS '배송비';
+
+COMMENT ON COLUMN product.prd_size IS '사이즈';
+
+COMMENT ON COLUMN product.is_sideoption IS '사이드 상품여부';
+
+COMMENT ON COLUMN product.side_optionname IS '사이드 추가상품';
+
+COMMENT ON COLUMN product.allergy_info IS '알레르기정보';
+
+COMMENT ON COLUMN product.ingredient_info IS '성분표시';
+
+COMMENT ON COLUMN product.discount_rate IS '할인율';
+
+COMMENT ON COLUMN product.sales IS '판매 수량';
+
+COMMENT ON COLUMN product.is_giftcard IS '기프티콘사용가능여부';
+
+CREATE UNIQUE INDEX PK_product
+   ON product (
+      prd_code ASC
+   );
+
+ALTER TABLE product
+   ADD
+      CONSTRAINT PK_product
+      PRIMARY KEY (
+         prd_code
+      );
+
+/* 상품 관리 */
+CREATE TABLE prdManage (
+   prdmanage_code VARCHAR2(20) NOT NULL, /* 상품관리 코드 */
+   manager_code VARCHAR2(20), /* 관리자ID */
+   prd_code VARCHAR2(30), /* 상품코드 */
+   create_date DATE, /* 최초 등록 날짜 */
+   modification_date DATE /* 수정날짜 */
+);
+
+COMMENT ON TABLE prdManage IS '상품 관리';
+
+COMMENT ON COLUMN prdManage.prdmanage_code IS '상품관리 코드';
+
+COMMENT ON COLUMN prdManage.manager_code IS '관리자ID';
+
+COMMENT ON COLUMN prdManage.prd_code IS '상품코드';
+
+COMMENT ON COLUMN prdManage.create_date IS '최초 등록 날짜';
+
+COMMENT ON COLUMN prdManage.modification_date IS '수정날짜';
+
+CREATE UNIQUE INDEX PK_prdManage
+   ON prdManage (
+      prdmanage_code ASC
+   );
+
+ALTER TABLE prdManage
+   ADD
+      CONSTRAINT PK_prdManage
+      PRIMARY KEY (
+         prdmanage_code
+      );
+
+/* 상품 이미지 */
+CREATE TABLE imgPrd (
+   prd_code VARCHAR2(30) NOT NULL, /* 상품코드 */
+   img1 VARCHAR2(100), /* 이미지1 */
+   img2 VARCHAR2(100), /* 이미지2 */
+   img3 VARCHAR2(100) /* 이미지3 */
+);
+
+COMMENT ON TABLE imgPrd IS '상품 이미지';
+
+COMMENT ON COLUMN imgPrd.prd_code IS '상품코드';
+
+COMMENT ON COLUMN imgPrd.img1 IS '이미지1';
+
+COMMENT ON COLUMN imgPrd.img2 IS '이미지2';
+
+COMMENT ON COLUMN imgPrd.img3 IS '이미지3';
+
+CREATE UNIQUE INDEX PK_imgPrd
+   ON imgPrd (
+      prd_code ASC
+   );
+
+ALTER TABLE imgPrd
+   ADD
+      CONSTRAINT PK_imgPrd
+      PRIMARY KEY (
+         prd_code
+      );
+
+/* 상품Q&A */
+CREATE TABLE prdQna (
+   prdqna_code VARCHAR2(20) NOT NULL, /* 상품Q&A코드 */
+   prd_code VARCHAR2(30), /* 상품코드 */
+   manager_code VARCHAR2(20), /* 관리자ID */
+   memb_code VARCHAR2(100), /* 회원ID */
+   title VARCHAR2(100), /* 제목 */
+   content VARCHAR2(4000), /* 내용 */
+   create_date DATE /* 작성일 */
+);
+
+COMMENT ON TABLE prdQna IS '상품Q&A';
+
+COMMENT ON COLUMN prdQna.prdqna_code IS '상품Q&A코드';
+
+COMMENT ON COLUMN prdQna.prd_code IS '상품코드';
+
+COMMENT ON COLUMN prdQna.manager_code IS '관리자ID';
+
+COMMENT ON COLUMN prdQna.memb_code IS '회원ID';
+
+COMMENT ON COLUMN prdQna.title IS '제목';
+
+COMMENT ON COLUMN prdQna.content IS '내용';
+
+COMMENT ON COLUMN prdQna.create_date IS '작성일';
+
+CREATE UNIQUE INDEX PK_prdQna
+   ON prdQna (
+      prdqna_code ASC
+   );
+
+ALTER TABLE prdQna
+   ADD
+      CONSTRAINT PK_prdQna
+      PRIMARY KEY (
+         prdqna_code
+      );
+
+/* 상품Q&A관리 */
+CREATE TABLE prdQnaManage (
+   prdqnamanage_code VARCHAR2(20) NOT NULL, /* 상품Q&A관리 코드 */
+   prdqna_code VARCHAR2(20), /* 상품Q&A코드 */
+   manager_code VARCHAR2(20), /* 관리자ID */
+   is_response NUMBER(1), /* 답변 여부 */
+   response_content VARCHAR2(4000), /* 답변 내용 */
+   response_date DATE /* 답변 날짜 */
+);
+
+COMMENT ON TABLE prdQnaManage IS '상품Q&A관리';
+
+COMMENT ON COLUMN prdQnaManage.prdqnamanage_code IS '상품Q&A관리 코드';
+
+COMMENT ON COLUMN prdQnaManage.prdqna_code IS '상품Q&A코드';
+
+COMMENT ON COLUMN prdQnaManage.manager_code IS '관리자ID';
+
+COMMENT ON COLUMN prdQnaManage.is_response IS '답변 여부';
+
+COMMENT ON COLUMN prdQnaManage.response_content IS '답변 내용';
+
+COMMENT ON COLUMN prdQnaManage.response_date IS '답변 날짜';
+
+CREATE UNIQUE INDEX PK_prdQnaManage
+   ON prdQnaManage (
+      prdqnamanage_code ASC
+   );
+
+ALTER TABLE prdQnaManage
+   ADD
+      CONSTRAINT PK_prdQnaManage
+      PRIMARY KEY (
+         prdqnamanage_code
+      );
+
+/* 상품보관함(좋아요) */
+CREATE TABLE wishList (
+   wish_code VARCHAR2(20) NOT NULL, /* 상품보관함코드 */
+   prd_code VARCHAR2(30), /* 상품코드 */
+   memb_code VARCHAR2(100) /* 회원ID */
+);
+
+COMMENT ON TABLE wishList IS '상품보관함(좋아요)';
+
+COMMENT ON COLUMN wishList.wish_code IS '상품보관함코드';
+
+COMMENT ON COLUMN wishList.prd_code IS '상품코드';
+
+COMMENT ON COLUMN wishList.memb_code IS '회원ID';
+
+CREATE UNIQUE INDEX PK_wishList
+   ON wishList (
+      wish_code ASC
+   );
+
+ALTER TABLE wishList
+   ADD
+      CONSTRAINT PK_wishList
+      PRIMARY KEY (
+         wish_code
+      );
+
+/* 신상품 */
+CREATE TABLE newPrd (
+   prd_code VARCHAR2(30) NOT NULL /* 상품코드 */
+);
+
+COMMENT ON TABLE newPrd IS '신상품';
+
+COMMENT ON COLUMN newPrd.prd_code IS '상품코드';
+
+CREATE UNIQUE INDEX PK_newPrd
+   ON newPrd (
+      prd_code ASC
+   );
+
+ALTER TABLE newPrd
+   ADD
+      CONSTRAINT PK_newPrd
+      PRIMARY KEY (
+         prd_code
+      );
+
+/* 장바구니 */
+CREATE TABLE cart (
+   cart_code VARCHAR2(30) NOT NULL, /* 장바구니 코드 */
+   prd_code VARCHAR2(30), /* 상품코드 */
+   memb_code VARCHAR2(100), /* 회원ID */
+   shipping_way VARCHAR2(40), /* 배송수단 */
+   order_qty NUMBER(3) /* 상품당 갯수 */
+);
+
+COMMENT ON TABLE cart IS '장바구니';
+
+COMMENT ON COLUMN cart.cart_code IS '장바구니 코드';
+
+COMMENT ON COLUMN cart.prd_code IS '상품코드';
+
+COMMENT ON COLUMN cart.memb_code IS '회원ID';
+
+COMMENT ON COLUMN cart.shipping_way IS '배송수단';
+
+COMMENT ON COLUMN cart.order_qty IS '상품당 갯수';
+
+CREATE UNIQUE INDEX PK_cart
+   ON cart (
+      cart_code ASC
+   );
+
+ALTER TABLE cart
+   ADD
+      CONSTRAINT PK_cart
+      PRIMARY KEY (
+         cart_code
+      );
+
+/* 적립금 종류 */
+CREATE TABLE mileagekind (
+   mileagekind_code VARCHAR2(20) NOT NULL, /* 적립금 종류 코드 */
+   mk_name VARCHAR2(30), /* 적립금 명 */
+   mk_point NUMBER /* 적립금 금액 */
+);
+
+COMMENT ON TABLE mileagekind IS '적립금 종류';
+
+COMMENT ON COLUMN mileagekind.mileagekind_code IS '적립금 종류 코드';
+
+COMMENT ON COLUMN mileagekind.mk_name IS '적립금 명';
+
+COMMENT ON COLUMN mileagekind.mk_point IS '적립금 금액';
+
+CREATE UNIQUE INDEX detail
+   ON mileagekind (
+      mileagekind_code ASC
+   );
+
+ALTER TABLE mileagekind
+   ADD
+      CONSTRAINT detail
+      PRIMARY KEY (
+         mileagekind_code
+      );
+
+/* 주문 */
+CREATE TABLE prdOrder (
+   order_code VARCHAR2(20) NOT NULL, /* 주문번호 */
+   prd_code VARCHAR2(30), /* 상품코드 */
+   memb_code VARCHAR2(100), /* 회원ID */
+   deslist_code VARCHAR2(30), /* 배송지 목록 코드 */
+   exchcoupon_code VARCHAR2(20), /* 모바일 상품 교환권 코드 */
+   cart_code VARCHAR2(30), /* 장바구니 코드 */
+   hcoupon_code VARCHAR2(20), /* 보유 쿠폰 코드 */
+   order_date DATE, /* 주문일자 */
+   order_price NUMBER(8), /* 주문금액 */
+   discount_price NUMBER(7), /* 할인금액 */
+   totalpayment_price NUMBER(8), /* 총 결제금액 */
+   shipping_state VARCHAR2(20), /* 처리상태 */
+   payment_option VARCHAR2(15), /* 결제방법 */
+   reserve_price NUMBER(5), /* 적립 예정 금액 */
+   shippingwish_date DATE, /* 배송 희망일 */
+   shipping_time VARCHAR2(10), /* 배송 시간 */
+   request_order VARCHAR2(60) /* 주문시 요청 사항 */
+);
+
+COMMENT ON TABLE prdOrder IS '주문';
+
+COMMENT ON COLUMN prdOrder.order_code IS '주문번호';
+
+COMMENT ON COLUMN prdOrder.prd_code IS '상품코드';
+
+COMMENT ON COLUMN prdOrder.memb_code IS '회원ID';
+
+COMMENT ON COLUMN prdOrder.deslist_code IS '배송지 목록 코드';
+
+COMMENT ON COLUMN prdOrder.exchcoupon_code IS '모바일 상품 교환권 코드';
+
+COMMENT ON COLUMN prdOrder.cart_code IS '장바구니 코드';
+
+COMMENT ON COLUMN prdOrder.hcoupon_code IS '보유 쿠폰 코드';
+
+COMMENT ON COLUMN prdOrder.order_date IS '주문일자';
+
+COMMENT ON COLUMN prdOrder.order_price IS '주문금액';
+
+COMMENT ON COLUMN prdOrder.discount_price IS '할인금액';
+
+COMMENT ON COLUMN prdOrder.totalpayment_price IS '총 결제금액';
+
+COMMENT ON COLUMN prdOrder.shipping_state IS '처리상태';
+
+COMMENT ON COLUMN prdOrder.payment_option IS '결제방법';
+
+COMMENT ON COLUMN prdOrder.reserve_price IS '적립 예정 금액';
+
+COMMENT ON COLUMN prdOrder.shippingwish_date IS '배송 희망일';
+
+COMMENT ON COLUMN prdOrder.shipping_time IS '배송 시간';
+
+COMMENT ON COLUMN prdOrder.request_order IS '주문시 요청 사항';
+
+CREATE UNIQUE INDEX PK_prdOrder
+   ON prdOrder (
+      order_code ASC
+   );
+
+ALTER TABLE prdOrder
+   ADD
+      CONSTRAINT PK_prdOrder
+      PRIMARY KEY (
+         order_code
+      );
+
+/* 주문/배송내역 */
+CREATE TABLE orderList (
+   orderlist_code VARCHAR2(30) NOT NULL, /* 주문/배송내역 코드 */
+   order_code VARCHAR2(20), /* 주문번호 */
+   memb_code VARCHAR2(100), /* 회원ID */
+   order_date DATE, /* 주문일자 */
+   product VARCHAR2(40), /* 상품명 */
+   delivery_way VARCHAR2(40), /* 배송수단 */
+   order_amount NUMBER(7), /* 주문금액 */
+   progress_status VARCHAR2(20) /* 진행현황 */
+);
+
+COMMENT ON TABLE orderList IS '주문/배송내역';
+
+COMMENT ON COLUMN orderList.orderlist_code IS '주문/배송내역 코드';
+
+COMMENT ON COLUMN orderList.order_code IS '주문번호';
+
+COMMENT ON COLUMN orderList.memb_code IS '회원ID';
+
+COMMENT ON COLUMN orderList.order_date IS '주문일자';
+
+COMMENT ON COLUMN orderList.product IS '상품명';
+
+COMMENT ON COLUMN orderList.delivery_way IS '배송수단';
+
+COMMENT ON COLUMN orderList.order_amount IS '주문금액';
+
+COMMENT ON COLUMN orderList.progress_status IS '진행현황';
+
+CREATE UNIQUE INDEX PK_orderList
+   ON orderList (
+      orderlist_code ASC
+   );
+
+ALTER TABLE orderList
+   ADD
+      CONSTRAINT PK_orderList
+      PRIMARY KEY (
+         orderlist_code
+      );
+
+/* 주문관리 */
+CREATE TABLE orderManage (
+   ordmanage_code VARCHAR2(20) NOT NULL, /* 주문관리 코드 */
+   order_code VARCHAR2(20), /* 주문번호 */
+   manager_code VARCHAR2(20), /* 관리자ID */
+   is_order NUMBER(1) /* 주문 확인 여부 */
+);
+
+COMMENT ON TABLE orderManage IS '주문관리';
+
+COMMENT ON COLUMN orderManage.ordmanage_code IS '주문관리 코드';
+
+COMMENT ON COLUMN orderManage.order_code IS '주문번호';
+
+COMMENT ON COLUMN orderManage.manager_code IS '관리자ID';
+
+COMMENT ON COLUMN orderManage.is_order IS '주문 확인 여부';
+
+CREATE UNIQUE INDEX PK_orderManage
+   ON orderManage (
+      ordmanage_code ASC
+   );
+
+ALTER TABLE orderManage
+   ADD
+      CONSTRAINT PK_orderManage
+      PRIMARY KEY (
+         ordmanage_code
+      );
+
+/* 지난쿠폰 */
+CREATE TABLE pastCoupon (
+   hcoupon_code VARCHAR2(20) NOT NULL /* 보유 쿠폰 코드 */
+);
+
+COMMENT ON TABLE pastCoupon IS '지난쿠폰';
+
+COMMENT ON COLUMN pastCoupon.hcoupon_code IS '보유 쿠폰 코드';
+
+CREATE UNIQUE INDEX PK_pastCoupon
+   ON pastCoupon (
+      hcoupon_code ASC
+   );
+
+ALTER TABLE pastCoupon
+   ADD
+      CONSTRAINT PK_pastCoupon
+      PRIMARY KEY (
+         hcoupon_code
+      );
+
+/* 최근본 상품 */
+CREATE TABLE lastView (
+   memb_code VARCHAR2(100) NOT NULL, /* 회원ID */
+   prd_code VARCHAR2(30) NOT NULL, /* 상품코드 */
+   view_date DATE /* 조회한 날짜 */
+);
+
+COMMENT ON TABLE lastView IS '최근본 상품';
+
+COMMENT ON COLUMN lastView.memb_code IS '회원ID';
+
+COMMENT ON COLUMN lastView.prd_code IS '상품코드';
+
+COMMENT ON COLUMN lastView.view_date IS '조회한 날짜';
+
+CREATE UNIQUE INDEX PK_lastView
+   ON lastView (
+      memb_code ASC,
+      prd_code ASC
+   );
+
+ALTER TABLE lastView
+   ADD
+      CONSTRAINT PK_lastView
+      PRIMARY KEY (
+         memb_code,
+         prd_code
+      );
+
+/* 취소/반품/환불내역 */
+CREATE TABLE returnList (
+   return_code VARCHAR2(30) NOT NULL, /* 취소/반품/환불내역 코드 */
+   order_code VARCHAR2(20), /* 주문번호 */
+   memb_code VARCHAR2(100), /* 회원ID */
+   order_date DATE, /* 주문일자 */
+   product VARCHAR2(40), /* 상품명 */
+   shipping_way VARCHAR2(40), /* 배송수단 */
+   order_amount NUMBER(7), /* 주문금액 */
+   shipping_status VARCHAR2(20) /* 배송상태 */
+);
+
+COMMENT ON TABLE returnList IS '취소/반품/환불내역';
+
+COMMENT ON COLUMN returnList.return_code IS '취소/반품/환불내역 코드';
+
+COMMENT ON COLUMN returnList.order_code IS '주문번호';
+
+COMMENT ON COLUMN returnList.memb_code IS '회원ID';
+
+COMMENT ON COLUMN returnList.order_date IS '주문일자';
+
+COMMENT ON COLUMN returnList.product IS '상품명';
+
+COMMENT ON COLUMN returnList.shipping_way IS '배송수단';
+
+COMMENT ON COLUMN returnList.order_amount IS '주문금액';
+
+COMMENT ON COLUMN returnList.shipping_status IS '배송상태';
+
+CREATE UNIQUE INDEX PK_returnList
+   ON returnList (
+      return_code ASC
+   );
+
+ALTER TABLE returnList
+   ADD
+      CONSTRAINT PK_returnList
+      PRIMARY KEY (
+         return_code
+      );
+
+/* 카테고리대 */
+CREATE TABLE maincategory (
+   maincat_code VARCHAR2(30) NOT NULL, /* 카테고리대코드 */
+   main_cat VARCHAR2(100) /* 카테고리대명 */
+);
+
+COMMENT ON TABLE maincategory IS '카테고리대';
+
+COMMENT ON COLUMN maincategory.maincat_code IS '카테고리대코드';
+
+COMMENT ON COLUMN maincategory.main_cat IS '카테고리대명';
+
+CREATE UNIQUE INDEX PK_maincategory
+   ON maincategory (
+      maincat_code ASC
+   );
+
+ALTER TABLE maincategory
+   ADD
+      CONSTRAINT PK_maincategory
+      PRIMARY KEY (
+         maincat_code
+      );
+
+/* 카테고리중 */
+CREATE TABLE category (
+   cat_code VARCHAR2(30) NOT NULL, /* 카테고리중코드 */
+   maincat_code VARCHAR2(30), /* 카테고리대코드 */
+   cat VARCHAR2(100) /* 카테고리중명 */
+);
+
+COMMENT ON TABLE category IS '카테고리중';
+
+COMMENT ON COLUMN category.cat_code IS '카테고리중코드';
+
+COMMENT ON COLUMN category.maincat_code IS '카테고리대코드';
+
+COMMENT ON COLUMN category.cat IS '카테고리중명';
+
+CREATE UNIQUE INDEX PK_category
+   ON category (
+      cat_code ASC
+   );
+
+ALTER TABLE category
+   ADD
+      CONSTRAINT PK_category
+      PRIMARY KEY (
+         cat_code
+      );
+
+/* 쿠폰 관리 */
+CREATE TABLE couponmanage (
+   coupon_code VARCHAR2(20), /* 쿠폰코드 */
+   manager_code VARCHAR2(20), /* 관리자ID */
+   create_date DATE /* 생성일 */
+);
+
+COMMENT ON TABLE couponmanage IS '쿠폰 관리';
+
+COMMENT ON COLUMN couponmanage.coupon_code IS '쿠폰코드';
+
+COMMENT ON COLUMN couponmanage.manager_code IS '관리자ID';
+
+COMMENT ON COLUMN couponmanage.create_date IS '생성일';
+
+/* 할인 쿠폰 */
+CREATE TABLE DCCoupon (
+   coupon_code VARCHAR2(20) NOT NULL, /* 쿠폰코드 */
+   prd_code VARCHAR2(30), /* 상품코드 */
+   cp_name VARCHAR2(20), /* 쿠폰 명 */
+   discount_price NUMBER(5), /* 쿠폰 적용 금액 */
+   exp_period DATE /* 유효기간 */
+);
+
+COMMENT ON TABLE DCCoupon IS '할인 쿠폰';
+
+COMMENT ON COLUMN DCCoupon.coupon_code IS '쿠폰코드';
+
+COMMENT ON COLUMN DCCoupon.prd_code IS '상품코드';
+
+COMMENT ON COLUMN DCCoupon.cp_name IS '쿠폰 명';
+
+COMMENT ON COLUMN DCCoupon.discount_price IS '쿠폰 적용 금액';
+
+COMMENT ON COLUMN DCCoupon.exp_period IS '유효기간';
+
+CREATE UNIQUE INDEX PK_DCCoupon
+   ON DCCoupon (
+      coupon_code ASC
+   );
+
+ALTER TABLE DCCoupon
+   ADD
+      CONSTRAINT PK_DCCoupon
+      PRIMARY KEY (
+         coupon_code
+      );
+
+/* 회원 */
+CREATE TABLE member (
+   memb_code VARCHAR2(100) NOT NULL, /* 회원ID */
+   memg_code VARCHAR2(20), /* 등급코드 */
+   password VARCHAR2(100), /* 비밀번호 */
+   name VARCHAR2(18), /* 이름 */
+   email VARCHAR2(40), /* 이메일 */
+   tel VARCHAR2(15), /* 전화번호 */
+   phone VARCHAR2(15), /* 휴대전화 */
+   address VARCHAR2(200), /* 주소 */
+   birth_date DATE, /* 생년월일 */
+   gender VARCHAR2(7), /* 성별 */
+   is_sms NUMBER(1), /* SMS 수신동의 */
+   is_email NUMBER(1), /* 이메일 수신동의 */
+   create_date DATE /* 가입일 */
+);
+
+COMMENT ON TABLE member IS '회원';
+
+COMMENT ON COLUMN member.memb_code IS '회원ID';
+
+COMMENT ON COLUMN member.memg_code IS '등급코드';
+
+COMMENT ON COLUMN member.password IS '비밀번호';
+
+COMMENT ON COLUMN member.name IS '이름';
+
+COMMENT ON COLUMN member.email IS '이메일';
+
+COMMENT ON COLUMN member.tel IS '전화번호';
+
+COMMENT ON COLUMN member.phone IS '휴대전화';
+
+COMMENT ON COLUMN member.address IS '주소';
+
+COMMENT ON COLUMN member.birth_date IS '생년월일';
+
+COMMENT ON COLUMN member.gender IS '성별';
+
+COMMENT ON COLUMN member.is_sms IS 'SMS 수신동의';
+
+COMMENT ON COLUMN member.is_email IS '이메일 수신동의';
+
+COMMENT ON COLUMN member.create_date IS '가입일';
+
+CREATE UNIQUE INDEX PK_member
+   ON member (
+      memb_code ASC
+   );
+
+ALTER TABLE member
+   ADD
+      CONSTRAINT PK_member
+      PRIMARY KEY (
+         memb_code
+      );
+
+/* 회원등급 */
+CREATE TABLE memberGrade (
+   memg_code VARCHAR2(20) NOT NULL, /* 등급코드 */
+   name VARCHAR2(18), /* 등급 명 */
+   standard NUMBER(6) /* 등급 기준 */
+);
+
+COMMENT ON TABLE memberGrade IS '회원등급';
+
+COMMENT ON COLUMN memberGrade.memg_code IS '등급코드';
+
+COMMENT ON COLUMN memberGrade.name IS '등급 명';
+
+COMMENT ON COLUMN memberGrade.standard IS '등급 기준';
+
+CREATE UNIQUE INDEX PK_memberGrade
+   ON memberGrade (
+      memg_code ASC
+   );
+
+ALTER TABLE memberGrade
+   ADD
+      CONSTRAINT PK_memberGrade
+      PRIMARY KEY (
+         memg_code
+      );
+
+/* 회원탈퇴 */
+CREATE TABLE withdrawal (
+   withdrawal_code VARCHAR2(40) NOT NULL, /* 회원탈퇴코드 */
+   claim_code VARCHAR2(20), /* 불편사항코드 */
+   memb_code VARCHAR2(100) /* 회원ID */
+);
+
+COMMENT ON TABLE withdrawal IS '회원탈퇴';
+
+COMMENT ON COLUMN withdrawal.withdrawal_code IS '회원탈퇴코드';
+
+COMMENT ON COLUMN withdrawal.claim_code IS '불편사항코드';
+
+COMMENT ON COLUMN withdrawal.memb_code IS '회원ID';
+
+CREATE UNIQUE INDEX PK_withdrawal
+   ON withdrawal (
+      withdrawal_code ASC
+   );
+
+ALTER TABLE withdrawal
+   ADD
+      CONSTRAINT PK_withdrawal
+      PRIMARY KEY (
+         withdrawal_code
+      );
+
+/* 상품평 */
+CREATE TABLE prdReview (
+   prdreview_code VARCHAR2(20) NOT NULL, /* 상품평코드 */
+   prd_code VARCHAR2(30), /* 상품코드 */
+   memb_code VARCHAR2(100), /* 회원ID */
+   title VARCHAR2(100), /* 제목 */
+   content VARCHAR2(4000), /* 내용 */
+   score NUMBER(1), /* 평점 */
+   write_date DATE, /* 작성날짜 */
+   is_img NUMBER(1), /* 이미지 여부 */
+   img VARCHAR2(100) /* 이미지 첨부 */
+);
+
+COMMENT ON TABLE prdReview IS '상품평';
+
+COMMENT ON COLUMN prdReview.prdreview_code IS '상품평코드';
+
+COMMENT ON COLUMN prdReview.prd_code IS '상품코드';
+
+COMMENT ON COLUMN prdReview.memb_code IS '회원ID';
+
+COMMENT ON COLUMN prdReview.title IS '제목';
+
+COMMENT ON COLUMN prdReview.content IS '내용';
+
+COMMENT ON COLUMN prdReview.score IS '평점';
+
+COMMENT ON COLUMN prdReview.write_date IS '작성날짜';
+
+COMMENT ON COLUMN prdReview.is_img IS '이미지 여부';
+
+COMMENT ON COLUMN prdReview.img IS '이미지 첨부';
+
+CREATE UNIQUE INDEX PK_prdReview
+   ON prdReview (
+      prdreview_code ASC
+   );
+
+ALTER TABLE prdReview
+   ADD
+      CONSTRAINT PK_prdReview
+      PRIMARY KEY (
+         prdreview_code
+      );
+
+/* 배송관리 */
+CREATE TABLE deliManage (
+   delimanage_code VARCHAR2(20) NOT NULL, /* 배송관리코드 */
+   manager_code VARCHAR2(20), /* 관리자ID */
+   orderlist_code VARCHAR2(30), /* 주문/배송내역 코드 */
+   is_delivery NUMBER, /* 배송확인 여부 */
+   delivery_num VARCHAR2(20), /* 운송장번호 */
+   delivery_cp VARCHAR2(30) /* 택배사 */
+);
+
+COMMENT ON TABLE deliManage IS '배송관리';
+
+COMMENT ON COLUMN deliManage.delimanage_code IS '배송관리코드';
+
+COMMENT ON COLUMN deliManage.manager_code IS '관리자ID';
+
+COMMENT ON COLUMN deliManage.orderlist_code IS '주문/배송내역 코드';
+
+COMMENT ON COLUMN deliManage.is_delivery IS '배송확인 여부';
+
+COMMENT ON COLUMN deliManage.delivery_num IS '운송장번호';
+
+COMMENT ON COLUMN deliManage.delivery_cp IS '택배사';
+
+CREATE UNIQUE INDEX deliManage
+   ON deliManage (
+      delimanage_code ASC
+   );
+
+ALTER TABLE deliManage
+   ADD
+      CONSTRAINT deliManage
+      PRIMARY KEY (
+         delimanage_code
+      );
+
+ALTER TABLE inquire
+   ADD
+      CONSTRAINT FK_member_TO_inquire
+      FOREIGN KEY (
+         memb_code
+      )
+      REFERENCES member (
+         memb_code
+      );
+
+ALTER TABLE inquireManage
+   ADD
+      CONSTRAINT FK_manager_TO_inquireManage
+      FOREIGN KEY (
+         manager_code
+      )
+      REFERENCES manager (
+         manager_code
+      );
+
+ALTER TABLE inquireManage
+   ADD
+      CONSTRAINT FK_inquire_TO_inquireManage
+      FOREIGN KEY (
+         inquire_code
+      )
+      REFERENCES inquire (
+         inquire_code
+      );
+
+ALTER TABLE faq
+   ADD
+      CONSTRAINT FK_manager_TO_faq
+      FOREIGN KEY (
+         manager_code
+      )
+      REFERENCES manager (
+         manager_code
+      );
+
+ALTER TABLE notice
+   ADD
+      CONSTRAINT FK_manager_TO_notice
+      FOREIGN KEY (
+         manager_code
+      )
+      REFERENCES manager (
+         manager_code
+      );
+
+ALTER TABLE AD
+   ADD
+      CONSTRAINT FK_manager_TO_AD
+      FOREIGN KEY (
+         manager_code
+      )
+      REFERENCES manager (
+         manager_code
+      );
+
+ALTER TABLE exchangeList
+   ADD
+      CONSTRAINT FK_prdOrder_TO_exchangeList
+      FOREIGN KEY (
+         order_code
+      )
+      REFERENCES prdOrder (
+         order_code
+      );
+
+ALTER TABLE exchangeList
+   ADD
+      CONSTRAINT FK_member_TO_exchangeList
+      FOREIGN KEY (
+         memb_code
+      )
+      REFERENCES member (
+         memb_code
+      );
+
+ALTER TABLE giftOrder
+   ADD
+      CONSTRAINT FK_product_TO_giftOrder
+      FOREIGN KEY (
+         prd_code
+      )
+      REFERENCES product (
+         prd_code
+      );
+
+ALTER TABLE store
+   ADD
+      CONSTRAINT FK_manager_TO_store
+      FOREIGN KEY (
+         manager_code
+      )
+      REFERENCES manager (
+         manager_code
+      );
+
+ALTER TABLE exchCoupon
+   ADD
+      CONSTRAINT FK_product_TO_exchCoupon
+      FOREIGN KEY (
+         prd_code
+      )
+      REFERENCES product (
+         prd_code
+      );
+
+ALTER TABLE shipOption
+   ADD
+      CONSTRAINT FK_product_TO_shipOption
+      FOREIGN KEY (
+         prd_code
+      )
+      REFERENCES product (
+         prd_code
+      );
+
+ALTER TABLE desList
+   ADD
+      CONSTRAINT FK_desInfo_TO_desList
+      FOREIGN KEY (
+         desinfo_code
+      )
+      REFERENCES desInfo (
+         desinfo_code
+      );
+
+ALTER TABLE desList
+   ADD
+      CONSTRAINT FK_member_TO_desList
+      FOREIGN KEY (
+         memb_code
+      )
+      REFERENCES member (
+         memb_code
+      );
+
+ALTER TABLE bestPrd
+   ADD
+      CONSTRAINT FK_product_TO_bestPrd
+      FOREIGN KEY (
+         prd_code
+      )
+      REFERENCES product (
+         prd_code
+      );
+
+ALTER TABLE mileage
+   ADD
+      CONSTRAINT FK_mileagekind_TO_mileage
+      FOREIGN KEY (
+         mileagekind_code
+      )
+      REFERENCES mileagekind (
+         mileagekind_code
+      );
+
+ALTER TABLE mileage
+   ADD
+      CONSTRAINT FK_member_TO_mileage
+      FOREIGN KEY (
+         memb_code
+      )
+      REFERENCES member (
+         memb_code
+      );
+
+ALTER TABLE mileage
+   ADD
+      CONSTRAINT FK_prdOrder_TO_mileage
+      FOREIGN KEY (
+         order_code
+      )
+      REFERENCES prdOrder (
+         order_code
+      );
+
+ALTER TABLE holdCoupon
+   ADD
+      CONSTRAINT FK_DCCoupon_TO_holdCoupon
+      FOREIGN KEY (
+         coupon_code
+      )
+      REFERENCES DCCoupon (
+         coupon_code
+      );
+
+ALTER TABLE holdCoupon
+   ADD
+      CONSTRAINT FK_member_TO_holdCoupon
+      FOREIGN KEY (
+         memb_code
+      )
+      REFERENCES member (
+         memb_code
+      );
+
+ALTER TABLE availCoupon
+   ADD
+      CONSTRAINT FK_holdCoupon_TO_availCoupon
+      FOREIGN KEY (
+         hcoupon_code
+      )
+      REFERENCES holdCoupon (
+         hcoupon_code
+      );
+
+ALTER TABLE product
+   ADD
+      CONSTRAINT FK_category_TO_product
+      FOREIGN KEY (
+         cat_code
+      )
+      REFERENCES category (
+         cat_code
+      );
+
+ALTER TABLE prdManage
+   ADD
+      CONSTRAINT FK_manager_TO_prdManage
+      FOREIGN KEY (
+         manager_code
+      )
+      REFERENCES manager (
+         manager_code
+      );
+
+ALTER TABLE prdManage
+   ADD
+      CONSTRAINT FK_product_TO_prdManage
+      FOREIGN KEY (
+         prd_code
+      )
+      REFERENCES product (
+         prd_code
+      );
+
+ALTER TABLE imgPrd
+   ADD
+      CONSTRAINT FK_product_TO_imgPrd
+      FOREIGN KEY (
+         prd_code
+      )
+      REFERENCES product (
+         prd_code
+      );
+
+ALTER TABLE prdQna
+   ADD
+      CONSTRAINT FK_manager_TO_prdQna
+      FOREIGN KEY (
+         manager_code
+      )
+      REFERENCES manager (
+         manager_code
+      );
+
+ALTER TABLE prdQna
+   ADD
+      CONSTRAINT FK_product_TO_prdQna
+      FOREIGN KEY (
+         prd_code
+      )
+      REFERENCES product (
+         prd_code
+      );
+
+ALTER TABLE prdQna
+   ADD
+      CONSTRAINT FK_member_TO_prdQna
+      FOREIGN KEY (
+         memb_code
+      )
+      REFERENCES member (
+         memb_code
+      );
+
+ALTER TABLE prdQnaManage
+   ADD
+      CONSTRAINT FK_manager_TO_prdQnaManage
+      FOREIGN KEY (
+         manager_code
+      )
+      REFERENCES manager (
+         manager_code
+      );
+
+ALTER TABLE prdQnaManage
+   ADD
+      CONSTRAINT FK_prdQna_TO_prdQnaManage
+      FOREIGN KEY (
+         prdqna_code
+      )
+      REFERENCES prdQna (
+         prdqna_code
+      );
+
+ALTER TABLE wishList
+   ADD
+      CONSTRAINT FK_product_TO_wishList
+      FOREIGN KEY (
+         prd_code
+      )
+      REFERENCES product (
+         prd_code
+      );
+
+ALTER TABLE wishList
+   ADD
+      CONSTRAINT FK_member_TO_wishList
+      FOREIGN KEY (
+         memb_code
+      )
+      REFERENCES member (
+         memb_code
+      );
+
+ALTER TABLE newPrd
+   ADD
+      CONSTRAINT FK_product_TO_newPrd
+      FOREIGN KEY (
+         prd_code
+      )
+      REFERENCES product (
+         prd_code
+      );
+
+ALTER TABLE cart
+   ADD
+      CONSTRAINT FK_product_TO_cart
+      FOREIGN KEY (
+         prd_code
+      )
+      REFERENCES product (
+         prd_code
+      );
+
+ALTER TABLE cart
+   ADD
+      CONSTRAINT FK_member_TO_cart
+      FOREIGN KEY (
+         memb_code
+      )
+      REFERENCES member (
+         memb_code
+      );
+
+ALTER TABLE prdOrder
+   ADD
+      CONSTRAINT FK_member_TO_prdOrder
+      FOREIGN KEY (
+         memb_code
+      )
+      REFERENCES member (
+         memb_code
+      );
+
+ALTER TABLE prdOrder
+   ADD
+      CONSTRAINT FK_desList_TO_prdOrder
+      FOREIGN KEY (
+         deslist_code
+      )
+      REFERENCES desList (
+         deslist_code
+      );
+
+ALTER TABLE prdOrder
+   ADD
+      CONSTRAINT FK_exchCoupon_TO_prdOrder
+      FOREIGN KEY (
+         exchcoupon_code
+      )
+      REFERENCES exchCoupon (
+         exchcoupon_code
+      );
+
+ALTER TABLE prdOrder
+   ADD
+      CONSTRAINT FK_cart_TO_prdOrder
+      FOREIGN KEY (
+         cart_code
+      )
+      REFERENCES cart (
+         cart_code
+      );
+
+ALTER TABLE prdOrder
+   ADD
+      CONSTRAINT FK_product_TO_prdOrder
+      FOREIGN KEY (
+         prd_code
+      )
+      REFERENCES product (
+         prd_code
+      );
+
+ALTER TABLE prdOrder
+   ADD
+      CONSTRAINT FK_holdCoupon_TO_prdOrder
+      FOREIGN KEY (
+         hcoupon_code
+      )
+      REFERENCES holdCoupon (
+         hcoupon_code
+      );
+
+ALTER TABLE orderList
+   ADD
+      CONSTRAINT FK_prdOrder_TO_orderList
+      FOREIGN KEY (
+         order_code
+      )
+      REFERENCES prdOrder (
+         order_code
+      );
+
+ALTER TABLE orderList
+   ADD
+      CONSTRAINT FK_member_TO_orderList
+      FOREIGN KEY (
+         memb_code
+      )
+      REFERENCES member (
+         memb_code
+      );
+
+ALTER TABLE orderManage
+   ADD
+      CONSTRAINT FK_prdOrder_TO_orderManage
+      FOREIGN KEY (
+         order_code
+      )
+      REFERENCES prdOrder (
+         order_code
+      );
+
+ALTER TABLE orderManage
+   ADD
+      CONSTRAINT FK_manager_TO_orderManage
+      FOREIGN KEY (
+         manager_code
+      )
+      REFERENCES manager (
+         manager_code
+      );
+
+ALTER TABLE pastCoupon
+   ADD
+      CONSTRAINT FK_holdCoupon_TO_pastCoupon
+      FOREIGN KEY (
+         hcoupon_code
+      )
+      REFERENCES holdCoupon (
+         hcoupon_code
+      );
+
+ALTER TABLE lastView
+   ADD
+      CONSTRAINT FK_product_TO_lastView
+      FOREIGN KEY (
+         prd_code
+      )
+      REFERENCES product (
+         prd_code
+      );
+
+ALTER TABLE lastView
+   ADD
+      CONSTRAINT FK_member_TO_lastView
+      FOREIGN KEY (
+         memb_code
+      )
+      REFERENCES member (
+         memb_code
+      );
+
+ALTER TABLE returnList
+   ADD
+      CONSTRAINT FK_prdOrder_TO_returnList
+      FOREIGN KEY (
+         order_code
+      )
+      REFERENCES prdOrder (
+         order_code
+      );
+
+ALTER TABLE returnList
+   ADD
+      CONSTRAINT FK_member_TO_returnList
+      FOREIGN KEY (
+         memb_code
+      )
+      REFERENCES member (
+         memb_code
+      );
+
+ALTER TABLE category
+   ADD
+      CONSTRAINT FK_maincategory_TO_category
+      FOREIGN KEY (
+         maincat_code
+      )
+      REFERENCES maincategory (
+         maincat_code
+      );
+
+ALTER TABLE couponmanage
+   ADD
+      CONSTRAINT FK_DCCoupon_TO_couponmanage
+      FOREIGN KEY (
+         coupon_code
+      )
+      REFERENCES DCCoupon (
+         coupon_code
+      );
+
+ALTER TABLE couponmanage
+   ADD
+      CONSTRAINT FK_manager_TO_couponmanage
+      FOREIGN KEY (
+         manager_code
+      )
+      REFERENCES manager (
+         manager_code
+      );
+
+ALTER TABLE DCCoupon
+   ADD
+      CONSTRAINT FK_product_TO_DCCoupon
+      FOREIGN KEY (
+         prd_code
+      )
+      REFERENCES product (
+         prd_code
+      );
+
+ALTER TABLE member
+   ADD
+      CONSTRAINT FK_memberGrade_TO_member
+      FOREIGN KEY (
+         memg_code
+      )
+      REFERENCES memberGrade (
+         memg_code
+      );
+
+ALTER TABLE withdrawal
+   ADD
+      CONSTRAINT FK_claimType_TO_withdrawal
+      FOREIGN KEY (
+         claim_code
+      )
+      REFERENCES claimType (
+         claim_code
+      );
+
+ALTER TABLE withdrawal
+   ADD
+      CONSTRAINT FK_member_TO_withdrawal
+      FOREIGN KEY (
+         memb_code
+      )
+      REFERENCES member (
+         memb_code
+      );
+
+ALTER TABLE prdReview
+   ADD
+      CONSTRAINT FK_member_TO_prdReview
+      FOREIGN KEY (
+         memb_code
+      )
+      REFERENCES member (
+         memb_code
+      );
+
+ALTER TABLE prdReview
+   ADD
+      CONSTRAINT FK_product_TO_prdReview
+      FOREIGN KEY (
+         prd_code
+      )
+      REFERENCES product (
+         prd_code
+      );
+
+ALTER TABLE deliManage
+   ADD
+      CONSTRAINT FK_manager_TO_deliManage
+      FOREIGN KEY (
+         manager_code
+      )
+      REFERENCES manager (
+         manager_code
+      );
+
+ALTER TABLE deliManage
+   ADD
+      CONSTRAINT FK_orderList_TO_deliManage
+      FOREIGN KEY (
+         orderlist_code
+      )
+      REFERENCES orderList (
+         orderlist_code
+      );

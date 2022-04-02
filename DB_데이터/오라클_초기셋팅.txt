@@ -1,0 +1,25 @@
+# 오라클 기본 정보
+계정 아이디 : SSD
+계정 비밀번호 : 1234
+
+# SYS 계정
+[계정 생성]
+create user ssd
+identified by 1234;
+[권한부여]
+grant connect, resource, dba, UNLIMITED TABLESPACE to SSD;
+
+[모든 유저  조회]
+select * from all_users;
+
+[ssd 계정삭제]
+drop user ssd;
+
+[데이터 저장]
+commit;
+
+# SSD 계정
+select * from user_tables;
+
+[모든 테이블 삭제]
+SELECT 'DROP TABLE "' || TABLE_NAME || '" CASCADE CONSTRAINTS;' FROM user_tables;

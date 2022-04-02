@@ -1,0 +1,31 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+   pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<sql:query var="products" dataSource="jdbc/myoracle">
+SELECT * FROM product
+</sql:query>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+   <h3>Hello world</h3>
+  
+   <c:forEach var="e" items='${products.rows}'>
+       ${e.prd_name}
+   </c:forEach>   
+   
+   <%-- 
+      <c:forEach var="e" items="${emps.rows}">
+       empno ${e.empno}<br/>
+       ename ${e.ename}<br/>
+   		</c:forEach>   
+   --%>
+   
+    
+</body>
+</html>

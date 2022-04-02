@@ -1,0 +1,85 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+<div>
+<a name='TSA_56'></a>
+<!--// 탬플릿 // 탑탑베너 --> 
+<style type="text/css">
+    .top_banner_wrap {width: 100%;}
+    .top_banner_wrap img{width: 100%; height: 30%}
+</style>
+<!--// 탬플릿 // 탑탑베너 -->
+<!-- <div class="top_banner_wrap"> -->
+    <a href="/Default.asp"><img src="/data/sungsimdang/banner/topbanner-main-fainal.jpg" alt=""></a>
+</div></div>
+<div>
+<a name='TSA_57'></a>
+<style type="text/css">
+
+	.utilWrap {width: 100%;}
+	.utilWrap .utilBox {width: 100%;height: 40px; line-height: 40px; max-width: 1280px; margin:0 auto;}
+	.utilWrap .utilBox .util {float: right;}
+	.utilWrap .utilBox .util ul {display:flex;}
+	.utilWrap .utilBox .util ul li {}
+	.utilWrap .utilBox .util ul li a{padding:0 10px; font-weight: 500; font-size: 13px; color: #a7a9ac; position: relative; transition: 0.2s ease;}
+	.utilWrap .utilBox .util ul li a:hover{color: #87553d;}
+	.utilWrap .utilBox .util ul li a:after {content: ""; display: block; position: absolute; width: 1px; height: 10px; left: 0; top: 5px; background-color: #a7a9ac;}
+	.utilWrap .utilBox .util ul li:nth-child(1) a:after {display:none;}
+</style>
+
+<div id="layer_pop_cls">
+
+</div>
+<div class="utilWrap">
+	<div class="utilBox">
+	<!-- 	<a href="#" id="favorite" class="addSite"><span class="iconfont ftic-Favorites"></span> 즐겨찾기</a> -->
+		<div class="util tmb_logout  hide">
+			<ul>
+				<li><a href="javascript:;" class="join_pop_cls">회원가입</a></li>
+				<li><a href="/member/login.asp">로그인</a></li>
+				<li><a href="/my/order_total.asp?mode=deliver">주문배송조회</a></li>
+				<li><a href="/cscenter/">고객센터</a></li>
+			</ul>		
+			<!-- 
+			<span href="/cscenter/main.asp" class="inList"> -->
+<!-- 			</span> -->
+		</div>
+
+		<div class="util tmb_login tmb_login">
+			<ul>
+				<c:if test="${empty sessionScope.user }">
+					<li><a href="javascript:;" class="join_pop_cls">회원가입</a></li>
+					<li><a href="/member/login.asp">로그인</a></li>
+				</c:if>
+				<c:if test="${not empty sessionScope.user }">
+					<li><a href="/my" class="hi">반갑습니다. ${sessionScope.user.name }님</a></li>
+					<li><a href="/logout.asp">로그아웃</a></li>
+				</c:if>
+					
+				<li><a href="/my/order_total.asp?mode=deliver">주문배송조회</a></li>
+				<li><a href="/cscenter/">고객센터</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+
+<script type="text/javascript">
+$.ajax({
+	type:"post",
+	url:"/common/ajax/exec_getCartCnt.asp",
+	success:function(data, state, xhr){
+		$(".cartCnt").each(function(){$(this).html(data);});
+	}
+})
+$(document).ready(function() {
+	$(".join_pop_cls").click(function(){
+		$.ajax({
+			type:"post",
+			url:"/common/ajax/exec_NewMainTopMenu.asp",
+			success:function(data){
+				$("#layer_pop_cls").html(data);
+			}
+		});
+	});
+});
+</script><script>$('.tmb_login.hide, .tmb_logout.hide').remove();</script></div>

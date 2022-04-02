@@ -1,0 +1,11 @@
+# requestURI = Model
+/product/sublist.asp=command.product.ListHandler
+/member/regist_agree.asp=command.member.RegistHandler
+/member/login.asp=command.member.LoginHandler
+/member/join.asp=command.member.JoinHandler
+/member/joinOK.asp=command.member.JoinOKHandler
+/my/order_total.asp=command.my.OrderHandler
+/Default.asp=command.DefaultHandler
+#/cscenter.asp=cscenter.command.CsHandler
+#/product/cart.asp=command.product.CartHandler
+

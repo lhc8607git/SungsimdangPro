@@ -1,0 +1,30 @@
+package persistence;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import com.util.ConnectionProvider;
+
+public class MemberDAO implements IMember {
+
+	@Override
+	public int checkId(String id) throws Exception {
+		int idCount;
+		String sql
+				= "SELECT count(*) "
+				+ "FROM member "
+				+ "WHERE memb_code = ?";
+		Connection conn = ConnectionProvider.getConnection();
+		PreparedStatement psmt = conn.prepareStatement(sql);
+		psmt.setString(1, id);
+		ResultSet rs = psmt.executeQuery();
+
+		rs.next();
+		idCount = rs.getInt(1);
+		psmt.close();
+		conn.close();
+		rs.close();
+		return idCount;
+	}
+}

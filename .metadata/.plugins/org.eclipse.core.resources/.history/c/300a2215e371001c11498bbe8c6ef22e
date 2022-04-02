@@ -1,0 +1,46 @@
+package command.member;
+
+import java.sql.Date;
+import java.time.LocalDate;
+import java.util.Enumeration;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import command.CommandHandler;
+
+public class JoinOKHandler implements CommandHandler {
+
+	@Override
+	public String process(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		String memb_code = request.getParameter("id");
+		String memg_code = "4200001";
+		String password = request.getParameter("pass");
+		String name = request.getParameter("name");
+		String email = request.getParameter("email");    
+//		String tel = request.getParameter()     
+		String phone = request.getParameter("mobile");    
+//		String address 
+//		Date birth_date         
+		String gender = request.getParameter("gender");           
+//		int is_sms              
+//		int is_email            
+//		Date create_date = 
+		
+		
+//		request.getParameter("post"); // 우편번호
+		
+//		Map<String, String[]> map = request.getParameterMap();
+//		Iterator<Entry<String, String[]>> ir =  map.entrySet().iterator();
+//		
+//		while (ir.hasNext()) {
+//			Entry<String, String[]> e = ir.next();
+//			System.out.printf("%s %s\n", e.getKey(), e.getValue()[0]);
+//		}
+		return "/my/main";
+	}
+
+}

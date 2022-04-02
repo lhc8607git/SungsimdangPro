@@ -1,0 +1,15 @@
+package domain;
+
+import java.sql.Date;
+
+public class Order {
+	String orderlist_code;   
+	String order_code;       
+	String memb_code;        
+	Date order_date;        
+	String product;          
+	String delivery_way;     
+	int order_amount;       
+	String progress_status; 
+
+}

@@ -1,0 +1,39 @@
+package command.member;
+
+import java.sql.Date;
+import java.time.LocalDate;
+import java.util.Enumeration;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import command.CommandHandler;
+import domain.Member;
+import persistence.MemberDAO;
+
+public class LoginOKHandler implements CommandHandler {
+
+	@Override
+	public String process(HttpServletRequest request, HttpServletResponse response) throws Exception {
+//		request.setCharacterEncoding("UTF-8");
+//		response.setCharacterEncoding("UTF-8");
+//		response.setContentType("text/html;charset=UTF-8");
+		String id = request.getParameter("id");
+		String pass = request.getParameter("pass");
+		
+		System.out.printf("%s / %s\n", id, pass);
+		
+		
+		
+//		Member member = new Member();
+//		MemberDAO dao = new MemberDAO();
+//		member.setMemb_code(memb_code);
+//		member.setPassword(password);
+//		dao.join(member);
+		
+		return "T";
+	}
+}

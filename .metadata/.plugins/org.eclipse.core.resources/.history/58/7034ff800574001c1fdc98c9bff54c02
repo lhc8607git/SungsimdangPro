@@ -1,0 +1,142 @@
+package controller;
+
+
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Properties;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import command.CommandHandler;
+
+
+
+// 컨틀로러 서블릿
+public class DispatcherServlet extends HttpServlet{ 
+	@Override public void destroy() {}
+
+	// <~.asp, Handler.java>
+	private Map<String, CommandHandler> commandHandlerMap =	new HashMap<>();
+
+	@Override
+	public void init() throws ServletException { 
+		
+		// path = product/commandHandler.properties
+		String path = this.getInitParameter("path");
+		String realPath = this.getServletContext().getRealPath(path);
+		
+		Properties prop = new Properties();
+		try ( FileReader fr = new FileReader(realPath) ) {
+			prop.load(fr);
+		} catch (Exception e) {
+			throw new ServletException(e);
+		}
+		
+		Iterator<Object> ir = prop.keySet().iterator();
+		while (ir.hasNext()) {
+			
+			// url = /product/sublist.asp
+			// = commandHandlerFullName = product.command.ListHandler
+			String url = (String) ir.next();
+			String commandHandlerFullName = prop.getProperty(url);
+			try {
+				Class<?> handlerClass = Class.forName(commandHandlerFullName);
+				CommandHandler handlerInstance = (CommandHandler) handlerClass.newInstance();
+				this.commandHandlerMap.put(url, handlerInstance);
+			} catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) { 
+				e.printStackTrace();
+			}
+		}
+		
+		
+	}
+
+	@Override
+	protected void doGet(HttpServletRequest request
+			, HttpServletResponse response) throws ServletException, IOException {
+		
+		// requestURI = /ssdPro/*.asp
+		String requestURI = request.getRequestURI();
+		
+		// contextPath = /ssdPro
+		String contextPath = request.getContextPath(); //   /jspPro
+		
+		if (  requestURI.indexOf(contextPath) == 0 ) {
+			// requestURI = /ssdPro
+			requestURI = requestURI.substring(contextPath.length());
+		}
+		
+		// 2. commandHandlerMap 맵 안서 로직을 처리하는 모델( Model )을 얻어오는 작업
+		CommandHandler modelhandler = this.commandHandlerMap.get(requestURI);
+		String viewPage = null;
+		
+		try {
+			// viewPage = sublist
+			viewPage = modelhandler.process(request, response);
+		} catch (Exception e) { 
+			e.printStackTrace();
+		}
+		
+		// 3. 포워딩 또는 리다이렉트
+		if ( viewPage != null ) {   // "list"
+//			String prefix = "/product/";
+			String suffix = ".jsp";
+//			viewPage = String.format("%s%s%s",  prefix, viewPage, suffix); 
+			viewPage += suffix;
+			
+			// viewPage = /product/sublist.jsp
+			RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
+			dispatcher.forward(request, response);
+		}
+		
+		
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest request
+			, HttpServletResponse response) throws ServletException, IOException {
+		
+		// requestURI = /ssdPro/*.asp
+		String requestURI = request.getRequestURI();
+		
+		// contextPath = /ssdPro
+		String contextPath = request.getContextPath(); //   /jspPro
+		
+		if (  requestURI.indexOf(contextPath) == 0 ) {
+			// requestURI = /ssdPro
+			requestURI = requestURI.substring(contextPath.length());
+		}
+		
+		// 2. commandHandlerMap 맵 안서 로직을 처리하는 모델( Model )을 얻어오는 작업
+		CommandHandler modelhandler = this.commandHandlerMap.get(requestURI);
+		String viewPage = null;
+		
+		try {
+			// viewPage = sublist
+			viewPage = modelhandler.process(request, response);
+		} catch (Exception e) { 
+			e.printStackTrace();
+		}
+		
+		// 3. 포워딩 또는 리다이렉트
+		if ( viewPage != null ) {   // "list"
+			String suffix = ".jsp";
+			viewPage += suffix;
+			
+			// viewPage = /product/sublist.jsp
+			RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
+			dispatcher.forward(request, response);
+		}		
+	}
+	
+	
+
+}

@@ -1,0 +1,64 @@
+package controller;
+
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/idcheck.do")
+public class IdCheck extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+    public IdCheck() {}
+    
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
+
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//		System.out.println("doPost 호출");
+        
+        String id = request.getParameter("chkID");
+        String data = request.getParameter("data");
+        String userid = request.getParameter("userid");
+        System.out.printf("id: %s\n", id);
+        System.out.printf("data: %s\n", data);
+        System.out.printf("userid: %s\n", userid);
+        
+        response.getWriter().print(0 + "");
+        
+ 
+//        return map;
+ 
+		
+		
+//		request.setCharacterEncoding("UTF-8");
+//		
+//		// ajax로 값을 받기 때문에 UTF-8로 인코딩해준다
+//		response.setCharacterEncoding("EUC-KR");
+//					
+//		String userId = request.getParameter("userId");
+//		
+//		// join.jsp에서 받아온 key값이 userId이고
+//		// value값은 유저가 실제로 적은 값, String userId에는 value값이 들어간다.
+//		PrintWriter out = response.getWriter();
+//				
+//		int idCheck = new MemberDAO().checkId(userId);
+//
+//		// 성공여부 확인 : 개발자용
+//		if (idCheck == 0) {
+//			System.out.println("이미 존재하는 아이디입니다.");
+//		} else if (idCheck == 1) {
+//			System.out.println("사용 가능한 아이디입니다.");
+//		}
+//				
+//		out.write(idCheck + ""); // --> ajax 결과값인 result가 됨
+//				// --> String으로 값을 내보낼 수 있도록 + "" 를 해준다
+	}
+
+}

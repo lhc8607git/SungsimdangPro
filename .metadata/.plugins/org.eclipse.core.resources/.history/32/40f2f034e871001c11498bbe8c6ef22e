@@ -1,0 +1,48 @@
+package command.member;
+
+import java.sql.Date;
+import java.time.LocalDate;
+import java.util.Enumeration;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import command.CommandHandler;
+
+public class JoinOKHandler implements CommandHandler {
+
+	@Override
+	public String process(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html;charset=UTF-8");
+		
+		String memb_code = request.getParameter("id");
+		String memg_code = "4200001";
+		String password = request.getParameter("pass");
+		String name = request.getParameter("name");
+		String email = request.getParameter("emailID");    
+		String tel = request.getParameter("tel");     
+		String phone = request.getParameter("mobile");    
+//		String address 
+//		Date birth_date         
+		String gender = request.getParameter("gender"); // M or F           
+//		int is_sms              
+//		int is_email            
+//		Date create_date = 
+		
+		
+//		request.getParameter("post"); // 우편번호 숫자
+		
+		System.out.printf("아이디: %s\n", memb_code);
+		System.out.printf("비밀번호: %s\n", password);
+		System.out.printf("이름: %s\n", name);
+		System.out.printf("이메일: %s\n", email);
+		System.out.printf("휴대폰번호: %s\n", phone);
+		System.out.printf("성별: %s\n", gender);
+		return "/my/main";
+	}
+}

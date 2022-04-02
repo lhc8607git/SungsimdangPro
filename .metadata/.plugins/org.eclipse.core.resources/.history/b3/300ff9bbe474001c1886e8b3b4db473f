@@ -1,0 +1,33 @@
+# requestURI = Model
+/member/regist_agree.asp=command.member.RegistHandler
+/member/login.asp=command.member.LoginHandler
+/member/join.asp=command.member.JoinHandler
+/member/joinOK.asp=command.member.JoinOKHandler
+/my/order_total.asp=command.my.OrderHandler
+
+# taekwon
+/default.asp=command.DefaultHandler
+/product/sublist.asp=command.product.ListHandler
+/product/best100.asp=command.product.BestHandler
+/product/deliveryList.asp=command.product.DeliveryHandler
+/product/giftGoodsList.asp=command.product.GiftListHandler
+
+# junho
+/default.asp=command.ListHandler
+/product/content.asp=command.ProductHandler
+/product/best100.asp=command.product.CateHandler
+
+# chahong
+
+# list
+/notice/notice.asp=command.notice.NoticeHandler
+
+# 1:1 = noticeAsk
+/cscenter/consultReg.asp=command.notice.NoticeAskHandler
+
+/notice/noticeFaq.asp=command.notice.NoticeFaqHandler
+
+/notice/noticeCacao.asp=command.notice.NoticeCacaoHandler
+
+# more
+/cscenter/notice_list.asp=command.notice.CsCenterHandler

@@ -1,0 +1,33 @@
+package persistence;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import com.util.ConnectionProvider;
+
+public class MemberDAO implements IMember {
+
+	@Override
+	public int checkId(String id) throws Exception {
+		Connection conn = null;
+		PreparedStatement psmt = null;
+		int idCheck = 0;
+		String sql = "SELECT * FROM member WHERE memb_code = ?"; // 입력값이 테이블에 있는지 확인
+
+		conn = ConnectionProvider.getConnection();
+		psmt = conn.prepareStatement(sql);
+		psmt.setString(1, id);
+		ResultSet rs = psmt.executeQuery();
+
+		if (rs.next() || id.equals("")) {
+			idCheck = 0; // 이미 존재하는 경우, 생성 불가능
+		} else {
+			idCheck = 1; // 존재하지 않는 경우, 생성 가능
+		}
+
+		psmt.close();
+		conn.close();
+		return idCheck;
+	}
+}

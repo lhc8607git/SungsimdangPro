@@ -1,0 +1,25 @@
+package command;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import domain.ProductDTO;
+import service.ProductService;
+
+public class ProductHandler implements CommandHandler{
+
+	@Override
+	public String process(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		
+		String prd_code = request.getParameter("prd_code");
+		
+		ProductService contentService = ProductService.getInstance();
+		ProductDTO dto = contentService.selectOne(prd_code);
+		
+		request.setAttribute("dto", dto);
+		
+		// content.jsp
+		return "content";
+	}
+
+}

@@ -1,0 +1,36 @@
+/**
+ * 
+ */
+ 
+ 
+ 
+$(".active_cont:first").click(function() {
+	$(".select_option").removeClass("focus");
+	$(this).parent().addClass("focus");
+});
+$(".active_cont:eq(1)").click(function() {
+	$(".select_option").removeClass("focus");
+	$(this).parent().addClass("focus");
+});
+$(".active_cont:eq(2)").click(function() {
+	$(".select_option").removeClass("focus");
+	$(this).parent().addClass("focus");
+});
+$(".active_cont:last").click(function() {
+	$(".select_option").removeClass("focus");
+	$(this).parent().addClass("focus");
+});
+
+$(".txt").parent("li").click(function() {
+	$(".select_option").removeClass("focus");
+	var select = $(this).children().html();
+	$(this).parent().prev().children().html(select);
+	
+	if ($(this).contains(".")) {
+		alert("이메일");
+	}
+	
+//	$("birthYear").val(select);
+//	$("birthMonth").val(select);
+//	$("birthDay").val(select);
+});

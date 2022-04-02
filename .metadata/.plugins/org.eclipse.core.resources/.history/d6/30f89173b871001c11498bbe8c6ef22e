@@ -1,0 +1,14 @@
+/**
+ * 
+ */
+//function idCheck() {
+//    console.log("blur");
+//}
+
+
+  function idCheck() {
+    
+		var userId = $('#chkID').val(); // input_id에 입력되는 값
+	console.log(userId);
+		
+  }

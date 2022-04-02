@@ -1,0 +1,58 @@
+package persistence;
+
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import com.util.ConnectionProvider;
+
+import domain.Member;
+
+public class MemberDAO implements IMember {
+
+	@Override
+	public int checkId(String id) throws Exception {
+		int idCount;
+		String sql
+				= "SELECT count(*) "
+				+ "FROM member "
+				+ "WHERE memb_code = ?";
+		Connection conn = ConnectionProvider.getConnection();
+		PreparedStatement psmt = conn.prepareStatement(sql);
+		psmt.setString(1, id);
+		ResultSet rs = psmt.executeQuery();
+
+		rs.next();
+		idCount = rs.getInt(1);
+		psmt.close();
+		conn.close();
+		rs.close();
+		return idCount;
+	}
+
+	@Override
+	public int join(Member member) throws Exception {
+		String sql
+				= "INSERT INTO member (memb_code, memg_code, password"
+						+ ", name, email, tel, phone, address, gender, create_date) "
+						+ "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, sysdate)";
+		Connection conn = ConnectionProvider.getConnection();
+		PreparedStatement psmt = conn.prepareStatement(sql);
+		
+		psmt.setString(1, member.getMemb_code());
+		psmt.setString(2, member.getMemg_code());
+		psmt.setString(3, member.getPassword());
+		psmt.setString(4, member.getName());
+		psmt.setString(5, member.getEmail());
+		psmt.setString(6, member.getTel());
+		psmt.setString(7, member.getPhone());
+		psmt.setString(8, member.getAddress());
+		psmt.setString(9, member.getGender());
+		int success = psmt.executeUpdate();
+		
+		psmt.close();
+		conn.close();
+		return success;
+	}
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="javax.servlet.annotation.WebServlet"/>
+    <fullyQualifiedTypeName name="product.command.CommandHandler"/>
+    <fullyQualifiedTypeName name="mvc.CommandHandler"/>
+    <fullyQualifiedTypeName name="persistence.IMember"/>
+    <fullyQualifiedTypeName name="com.util.ConnectionProvider"/>
+    <fullyQualifiedTypeName name="java.time.LocalDate"/>
+    <fullyQualifiedTypeName name="javax.management.MBeanServerDelegate"/>
+    <fullyQualifiedTypeName name="command.member.LoginOKHandler"/>
+    <fullyQualifiedTypeName name="persistence.MemberDAO"/>
+    <fullyQualifiedTypeName name="domain.Member"/>
+    <fullyQualifiedTypeName name="java.sql.Date"/>
+    <fullyQualifiedTypeName name="persistence.IOrder"/>
+    <fullyQualifiedTypeName name="domain.Order"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="persistence.OrderDAO"/>
+    <fullyQualifiedTypeName name="java.lang.Exception"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="command.CommandHandler"/>
+</qualifiedTypeNameHistroy>

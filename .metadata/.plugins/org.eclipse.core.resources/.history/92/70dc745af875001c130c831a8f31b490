@@ -1,0 +1,69 @@
+# requestURI = Model
+/member/regist_agree.asp=command.member.RegistHandler
+/member/login.asp=command.member.LoginHandler
+/member/join.asp=command.member.JoinHandler
+/member/joinOK.asp=command.member.JoinOKHandler
+/my/order_total.asp=command.my.OrderHandler
+
+# taekwon
+/default.asp=command.DefaultHandler
+/product/sublist.asp=command.product.ListHandler
+/product/best100.asp=command.product.BestHandler
+/product/deliveryList.asp=command.product.DeliveryHandler
+/product/giftGoodsList.asp=command.product.GiftListHandler
+
+# junho
+/default.asp=command.ListHandler
+/product/content.asp=command.ProductHandler
+/product/best100.asp=command.product.CateHandler
+
+# chahong
+/notice/notice.asp=command.notice.NoticeHandler
+/cscenter/consultReg.asp=command.notice.NoticeAskHandler
+/cscenter/faq.asp=command.notice.NoticeFaqHandler
+/notice/noticeCacao.asp=command.notice.NoticeCacaoHandler
+/cscenter/notice_list.asp=command.notice.CsCenterHandler
+
+# dummy
+/dummy.asp=command.dummy.DummyHandler
+/common/ajax/exec_getCartCnt.asp=command.dummy.DummyHandler
+/common/ajax/exec_fullCategory.asp=command.dummy.DummyHandler
+/common/ajax/json_categoryMenu.asp=command.dummy.DummyHandler
+
+<!-- manager ------------------------ -->
+/manager/manager_main.asp=command.manager.ManagerHandler
+<!-- ----------AD-------------- -->
+/manager/ad/adlist.asp=command.manager.ad.AdListHandler
+/manager/ad/adwrite.asp=command.manager.ad.AdWriteHandler
+/manager/ad/adcontent.asp=command.manager.ad.AdContentHandler
+/manager/ad/addelete.asp=command.manager.ad.AdDeleteHandler
+/manager/ad/adedit.asp=command.manager.ad.AdEditHandler
+
+<!-- ---------FAQ--------------- -->
+/manager/faq/faqlist.asp=command.manager.faq.FaqListHandler
+/manager/faq/faqwrite.asp=command.manager.faq.FaqWriteHandler
+/manager/faq/faqcontent.asp=command.manager.faq.FaqContentHandler
+/manager/faq/faqdelete.asp=command.manager.faq.FaqDeleteHandler
+/manager/faq/faqedit.asp=command.manager.faq.FaqEditHandler
+
+<!-- --------store---------------- -->
+/manager/store/storelist.asp=command.manager.store.StoListHandler
+/manager/store/storewrite.asp=command.manager.store.StoWriteHandler
+/manager/store/storecontent.asp=command.manager.store.StoContentHandler
+/manager/store/storedelete.asp=command.manager.store.StoDeleteHandler
+/manager/store/storeedit.asp=command.manager.store.StoEditHandler
+
+<!-- ----------notice-------------- -->
+/manager/notice/noticelist.asp=command.manager.notice.NoticeListHandler
+/manager/notice/noticewrite.asp=command.manager.notice.NoticeWriteHandler
+/manager/notice/noticecontent.asp=command.manager.notice.NoticeContentHandler
+/manager/notice/noticedelete.asp=command.manager.notice.NoticeDeleteHandler
+/manager/notice/noticeedit.asp=command.manager.notice.NoticeEditHandler
+
+#<!-- --------product---------------- -->
+/manager/product/productlist.asp=command.manager.product.ProdListHandler
+/manager/product/productwrite.asp=command.manager.product.ProdWriteHandler
+/manager/product/productcontent.asp=command.manager.product.ProdContentHandler
+/manager/product/productdelete.asp=command.manager.product.ProdDeleteHandler
+/manager/product/productedit.asp=command.manager.product.ProdEditHandler
+

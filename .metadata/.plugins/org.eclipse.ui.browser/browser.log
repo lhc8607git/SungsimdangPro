@@ -1,0 +1,112 @@
+
+1월 06, 2022 17:33:04.287 NEW SESSION
+1월 06, 2022 17:33:04.287 [7656:8948:0106/173304.286:ERROR:chrome_browser_main_extra_parts_metrics.cc(227)] START: ReportBluetoothAvailability(). If you don't see the END: message, this is crbug.com/1216328.
+1월 06, 2022 17:33:04.287 [7656:8948:0106/173304.286:ERROR:chrome_browser_main_extra_parts_metrics.cc(230)] END: ReportBluetoothAvailability()
+1월 06, 2022 17:33:04.288 [7656:8948:0106/173304.286:ERROR:chrome_browser_main_extra_parts_metrics.cc(235)] START: GetDefaultBrowser(). If you don't see the END: message, this is crbug.com/1216328.
+1월 06, 2022 17:33:04.289 [7656:8948:0106/173304.289:ERROR:chrome_browser_main_extra_parts_metrics.cc(239)] END: GetDefaultBrowser()
+1월 06, 2022 17:33:04.295 [7656:13092:0106/173304.294:ERROR:device_event_log_impl.cc(214)] [17:33:04.295] USB: usb_device_handle_win.cc:1050 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+1월 06, 2022 17:33:04.297 [7656:13092:0106/173304.297:ERROR:device_event_log_impl.cc(214)] [17:33:04.297] USB: usb_device_handle_win.cc:1050 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+1월 06, 2022 17:52:58.396 [7656:13092:0106/175258.396:ERROR:interface_endpoint_client.cc(658)] Message 1 rejected by interface blink.mojom.WidgetHost
+1월 06, 2022 17:52:58.397 [7656:13092:0106/175258.396:ERROR:interface_endpoint_client.cc(658)] Message 1 rejected by interface blink.mojom.WidgetHost
+1월 06, 2022 18:28:05.35 [7656:13092:0106/182805.035:ERROR:interface_endpoint_client.cc(658)] Message 1 rejected by interface blink.mojom.WidgetHost
+
+1월 07, 2022 10:37:56.844 NEW SESSION
+1월 07, 2022 10:37:56.844 [4940:7664:0107/103756.843:ERROR:chrome_browser_main_extra_parts_metrics.cc(227)] START: ReportBluetoothAvailability(). If you don't see the END: message, this is crbug.com/1216328.
+1월 07, 2022 10:37:56.845 [4940:7664:0107/103756.843:ERROR:chrome_browser_main_extra_parts_metrics.cc(230)] END: ReportBluetoothAvailability()
+1월 07, 2022 10:37:56.845 [4940:7664:0107/103756.843:ERROR:chrome_browser_main_extra_parts_metrics.cc(235)] START: GetDefaultBrowser(). If you don't see the END: message, this is crbug.com/1216328.
+1월 07, 2022 10:37:56.846 [4940:7664:0107/103756.846:ERROR:chrome_browser_main_extra_parts_metrics.cc(239)] END: GetDefaultBrowser()
+1월 07, 2022 10:37:56.849 [4940:4612:0107/103756.848:ERROR:device_event_log_impl.cc(214)] [10:37:56.848] USB: usb_device_handle_win.cc:1050 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+1월 07, 2022 10:37:56.849 [4940:4612:0107/103756.849:ERROR:device_event_log_impl.cc(214)] [10:37:56.849] USB: usb_device_handle_win.cc:1050 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+1월 07, 2022 11:49:01.515 [4940:4612:0107/114901.515:ERROR:interface_endpoint_client.cc(658)] Message 1 rejected by interface blink.mojom.WidgetHost
+1월 07, 2022 12:36:14.206 [17040:4320:0107/123614.206:ERROR:chrome_browser_main_extra_parts_metrics.cc(227)] START: ReportBluetoothAvailability(). If you don't see the END: message, this is crbug.com/1216328.
+1월 07, 2022 12:36:14.207 [17040:4320:0107/123614.206:ERROR:chrome_browser_main_extra_parts_metrics.cc(230)] END: ReportBluetoothAvailability()
+1월 07, 2022 12:36:14.208 [17040:4320:0107/123614.206:ERROR:chrome_browser_main_extra_parts_metrics.cc(235)] START: GetDefaultBrowser(). If you don't see the END: message, this is crbug.com/1216328.
+1월 07, 2022 12:36:14.210 [17040:4320:0107/123614.210:ERROR:chrome_browser_main_extra_parts_metrics.cc(239)] END: GetDefaultBrowser()
+1월 07, 2022 12:36:14.213 [17040:13580:0107/123614.212:ERROR:device_event_log_impl.cc(214)] [12:36:14.213] USB: usb_device_handle_win.cc:1050 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+1월 07, 2022 12:36:14.213 [17040:13580:0107/123614.213:ERROR:device_event_log_impl.cc(214)] [12:36:14.213] USB: usb_device_handle_win.cc:1050 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+1월 07, 2022 14:50:39.17 [17104:1256:0107/145039.016:ERROR:chrome_browser_main_extra_parts_metrics.cc(227)] START: ReportBluetoothAvailability(). If you don't see the END: message, this is crbug.com/1216328.
+1월 07, 2022 14:50:39.17 [17104:1256:0107/145039.016:ERROR:chrome_browser_main_extra_parts_metrics.cc(230)] END: ReportBluetoothAvailability()
+1월 07, 2022 14:50:39.18 [17104:1256:0107/145039.016:ERROR:chrome_browser_main_extra_parts_metrics.cc(235)] START: GetDefaultBrowser(). If you don't see the END: message, this is crbug.com/1216328.
+1월 07, 2022 14:50:39.20 [17104:1256:0107/145039.020:ERROR:chrome_browser_main_extra_parts_metrics.cc(239)] END: GetDefaultBrowser()
+1월 07, 2022 14:50:39.23 [17104:13436:0107/145039.022:ERROR:device_event_log_impl.cc(214)] [14:50:39.023] USB: usb_device_handle_win.cc:1050 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+1월 07, 2022 14:50:39.24 [17104:13436:0107/145039.023:ERROR:device_event_log_impl.cc(214)] [14:50:39.024] USB: usb_device_handle_win.cc:1050 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+1월 07, 2022 21:58:05.744 [17104:13436:0107/215805.743:ERROR:device_event_log_impl.cc(214)] [21:58:05.702] USB: usb_service_win.cc:261 Failed to get device driver name: 요소가 없습니다. (0x490)
+
+1월 10, 2022 09:28:17.549 NEW SESSION
+1월 10, 2022 09:28:17.549 [3100:9768:0110/092817.547:ERROR:chrome_browser_main_extra_parts_metrics.cc(227)] START: ReportBluetoothAvailability(). If you don't see the END: message, this is crbug.com/1216328.
+1월 10, 2022 09:28:17.549 [3100:9768:0110/092817.547:ERROR:chrome_browser_main_extra_parts_metrics.cc(230)] END: ReportBluetoothAvailability()
+1월 10, 2022 09:28:17.550 [3100:9768:0110/092817.547:ERROR:chrome_browser_main_extra_parts_metrics.cc(235)] START: GetDefaultBrowser(). If you don't see the END: message, this is crbug.com/1216328.
+1월 10, 2022 09:28:17.550 [3100:9768:0110/092817.550:ERROR:chrome_browser_main_extra_parts_metrics.cc(239)] END: GetDefaultBrowser()
+1월 10, 2022 09:28:17.556 [3100:14748:0110/092817.556:ERROR:device_event_log_impl.cc(214)] [09:28:17.556] USB: usb_device_handle_win.cc:1050 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+1월 10, 2022 09:28:17.557 [3100:14748:0110/092817.557:ERROR:device_event_log_impl.cc(214)] [09:28:17.557] USB: usb_device_handle_win.cc:1050 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+1월 10, 2022 10:32:40.258 [3092:9788:0110/103240.258:ERROR:chrome_browser_main_extra_parts_metrics.cc(227)] START: ReportBluetoothAvailability(). If you don't see the END: message, this is crbug.com/1216328.
+1월 10, 2022 10:32:40.259 [3092:9788:0110/103240.258:ERROR:chrome_browser_main_extra_parts_metrics.cc(230)] END: ReportBluetoothAvailability()
+1월 10, 2022 10:32:40.259 [3092:9788:0110/103240.258:ERROR:chrome_browser_main_extra_parts_metrics.cc(235)] START: GetDefaultBrowser(). If you don't see the END: message, this is crbug.com/1216328.
+1월 10, 2022 10:32:40.261 [3092:9788:0110/103240.261:ERROR:chrome_browser_main_extra_parts_metrics.cc(239)] END: GetDefaultBrowser()
+1월 10, 2022 10:32:40.267 [3092:14424:0110/103240.267:ERROR:device_event_log_impl.cc(214)] [10:32:40.267] USB: usb_device_handle_win.cc:1050 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+1월 10, 2022 10:32:40.268 [3092:14424:0110/103240.267:ERROR:device_event_log_impl.cc(214)] [10:32:40.268] USB: usb_device_handle_win.cc:1050 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+
+1월 11, 2022 12:32:05.791 NEW SESSION
+1월 11, 2022 12:32:05.791 [16844:1384:0111/123205.789:ERROR:chrome_browser_main_extra_parts_metrics.cc(227)] START: ReportBluetoothAvailability(). If you don't see the END: message, this is crbug.com/1216328.
+1월 11, 2022 12:32:05.792 [16844:1384:0111/123205.789:ERROR:chrome_browser_main_extra_parts_metrics.cc(230)] END: ReportBluetoothAvailability()
+1월 11, 2022 12:32:05.792 [16844:1384:0111/123205.789:ERROR:chrome_browser_main_extra_parts_metrics.cc(235)] START: GetDefaultBrowser(). If you don't see the END: message, this is crbug.com/1216328.
+1월 11, 2022 12:32:05.795 [16844:1384:0111/123205.795:ERROR:chrome_browser_main_extra_parts_metrics.cc(239)] END: GetDefaultBrowser()
+1월 11, 2022 12:32:05.806 [16844:14740:0111/123205.806:ERROR:device_event_log_impl.cc(214)] [12:32:05.806] USB: usb_device_handle_win.cc:1050 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+1월 11, 2022 12:32:05.808 [16844:14740:0111/123205.808:ERROR:device_event_log_impl.cc(214)] [12:32:05.808] USB: usb_device_handle_win.cc:1050 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+1월 11, 2022 12:53:17.882 [16844:14740:0111/125317.882:ERROR:interface_endpoint_client.cc(658)] Message 1 rejected by interface blink.mojom.WidgetHost
+1월 11, 2022 15:58:53.186 [16844:14740:0111/155853.185:ERROR:interface_endpoint_client.cc(658)] Message 1 rejected by interface blink.mojom.WidgetHost
+
+1월 13, 2022 09:06:25.04 NEW SESSION
+1월 13, 2022 09:06:25.04 [13556:1724:0113/090625.002:ERROR:chrome_browser_main_extra_parts_metrics.cc(227)] START: ReportBluetoothAvailability(). If you don't see the END: message, this is crbug.com/1216328.
+1월 13, 2022 09:06:25.04 [13556:1724:0113/090625.002:ERROR:chrome_browser_main_extra_parts_metrics.cc(230)] END: ReportBluetoothAvailability()
+1월 13, 2022 09:06:25.05 [13556:1724:0113/090625.002:ERROR:chrome_browser_main_extra_parts_metrics.cc(235)] START: GetDefaultBrowser(). If you don't see the END: message, this is crbug.com/1216328.
+1월 13, 2022 09:06:25.06 [13556:1724:0113/090625.005:ERROR:chrome_browser_main_extra_parts_metrics.cc(239)] END: GetDefaultBrowser()
+1월 13, 2022 09:06:25.12 [13556:15864:0113/090625.012:ERROR:device_event_log_impl.cc(214)] [09:06:25.012] USB: usb_device_handle_win.cc:1050 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+1월 13, 2022 09:06:25.13 [13556:15864:0113/090625.013:ERROR:device_event_log_impl.cc(214)] [09:06:25.013] USB: usb_device_handle_win.cc:1050 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+1월 13, 2022 09:19:34.18 [13556:15864:0113/091934.017:ERROR:interface_endpoint_client.cc(658)] Message 5 rejected by interface blink.mojom.WidgetHost
+1월 13, 2022 14:15:18.300 [13556:15864:0113/141518.297:ERROR:interface_endpoint_client.cc(658)] Message 1 rejected by interface blink.mojom.WidgetHost
+1월 13, 2022 14:29:09.533 [13556:10272:0113/142909.533:ERROR:database.cc(1773)] Passwords SQLite error: code 2067 errno 0: UNIQUE constraint failed: logins.origin_url, logins.username_element, logins.username_value, logins.password_element, logins.signon_realm sql: INSERT INTO logins (origin_url, action_url, username_element, username_value, password_element, password_value, submit_element, signon_realm, date_created, blacklisted_by_user, scheme, password_type, times_used, form_data, display_name, icon_url, federation_url, skip_zero_click, generation_upload_status, possible_username_pairs, id, date_last_used, moving_blocked_for, date_password_modified) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+1월 13, 2022 14:50:49.390 [13556:15864:0113/145049.389:ERROR:CONSOLE(1)] "console.assert", source: devtools://devtools/bundled/devtools-frontend/front_end/core/sdk/sdk.js (1)
+1월 13, 2022 14:50:49.392 [13556:15864:0113/145049.390:ERROR:CONSOLE(0)] "TypeError: Cannot read properties of null (reading 'sourceURL')", source:  (0)
+1월 13, 2022 14:57:29.769 [13556:15864:0113/145729.768:ERROR:CONSOLE(1)] "console.assert", source: devtools://devtools/bundled/devtools-frontend/front_end/core/sdk/sdk.js (1)
+1월 13, 2022 14:57:29.770 [13556:15864:0113/145729.768:ERROR:CONSOLE(0)] "TypeError: Cannot read properties of null (reading 'sourceURL')", source:  (0)
+1월 13, 2022 14:57:29.882 [13556:15864:0113/145729.882:ERROR:CONSOLE(1)] "console.assert", source: devtools://devtools/bundled/devtools-frontend/front_end/core/sdk/sdk.js (1)
+1월 13, 2022 14:57:29.883 [13556:15864:0113/145729.882:ERROR:CONSOLE(0)] "TypeError: Cannot read properties of null (reading 'sourceURL')", source:  (0)
+1월 13, 2022 14:57:30.52 [13556:15864:0113/145730.051:ERROR:CONSOLE(1)] "console.assert", source: devtools://devtools/bundled/devtools-frontend/front_end/core/sdk/sdk.js (1)
+1월 13, 2022 14:57:30.52 [13556:15864:0113/145730.051:ERROR:CONSOLE(0)] "TypeError: Cannot read properties of null (reading 'sourceURL')", source:  (0)
+1월 13, 2022 14:57:30.435 [13556:15864:0113/145730.434:ERROR:CONSOLE(1)] "console.assert", source: devtools://devtools/bundled/devtools-frontend/front_end/core/sdk/sdk.js (1)
+1월 13, 2022 14:57:30.435 [13556:15864:0113/145730.434:ERROR:CONSOLE(0)] "TypeError: Cannot read properties of null (reading 'sourceURL')", source:  (0)
+1월 13, 2022 14:57:31.51 [13556:15864:0113/145731.051:ERROR:CONSOLE(1)] "console.assert", source: devtools://devtools/bundled/devtools-frontend/front_end/core/sdk/sdk.js (1)
+1월 13, 2022 14:57:31.51 [13556:15864:0113/145731.051:ERROR:CONSOLE(0)] "TypeError: Cannot read properties of null (reading 'sourceURL')", source:  (0)
+1월 13, 2022 16:20:35.790 [13556:15864:0113/162035.790:ERROR:interface_endpoint_client.cc(658)] Message 1 rejected by interface blink.mojom.WidgetHost
+1월 13, 2022 16:20:35.791 [13556:15864:0113/162035.790:ERROR:interface_endpoint_client.cc(658)] Message 1 rejected by interface blink.mojom.WidgetHost
+1월 13, 2022 16:20:35.791 [13556:15864:0113/162035.790:ERROR:interface_endpoint_client.cc(658)] Message 1 rejected by interface blink.mojom.WidgetHost
+1월 13, 2022 16:24:19.548 [13556:15864:0113/162419.548:ERROR:interface_endpoint_client.cc(658)] Message 1 rejected by interface blink.mojom.WidgetHost
+1월 13, 2022 16:24:19.549 [13556:15864:0113/162419.548:ERROR:interface_endpoint_client.cc(658)] Message 1 rejected by interface blink.mojom.WidgetHost
+1월 13, 2022 17:38:08.845 [13556:15864:0113/173808.844:ERROR:interface_endpoint_client.cc(658)] Message 1 rejected by interface blink.mojom.WidgetHost
+1월 13, 2022 17:38:08.845 [13556:15864:0113/173808.844:ERROR:interface_endpoint_client.cc(658)] Message 1 rejected by interface blink.mojom.WidgetHost
+1월 13, 2022 18:24:31.913 [13556:15864:0113/182431.912:ERROR:interface_endpoint_client.cc(658)] Message 1 rejected by interface blink.mojom.WidgetHost
+1월 13, 2022 19:14:04.238 [13556:15864:0113/191404.237:ERROR:interface_endpoint_client.cc(658)] Message 1 rejected by interface blink.mojom.WidgetHost
+1월 13, 2022 20:34:57.183 [13556:15864:0113/203457.182:ERROR:CONSOLE(1)] "console.assert", source: devtools://devtools/bundled/devtools-frontend/front_end/core/sdk/sdk.js (1)
+1월 13, 2022 20:34:57.183 [13556:15864:0113/203457.183:ERROR:CONSOLE(0)] "TypeError: Cannot read properties of null (reading 'sourceURL')", source:  (0)
+1월 13, 2022 20:36:16.959 [13556:15864:0113/203616.958:ERROR:CONSOLE(1)] "console.assert", source: devtools://devtools/bundled/devtools-frontend/front_end/core/sdk/sdk.js (1)
+1월 13, 2022 20:36:16.959 [13556:15864:0113/203616.958:ERROR:CONSOLE(0)] "TypeError: Cannot read properties of null (reading 'sourceURL')", source:  (0)
+1월 13, 2022 20:36:28.381 [13556:15864:0113/203628.380:ERROR:CONSOLE(1)] "console.assert", source: devtools://devtools/bundled/devtools-frontend/front_end/core/sdk/sdk.js (1)
+1월 13, 2022 20:36:28.381 [13556:15864:0113/203628.380:ERROR:CONSOLE(0)] "TypeError: Cannot read properties of null (reading 'sourceURL')", source:  (0)
+1월 13, 2022 20:49:08.218 [13556:15864:0113/204908.217:ERROR:interface_endpoint_client.cc(658)] Message 1 rejected by interface blink.mojom.WidgetHost
+1월 13, 2022 21:45:07.948 [13556:15864:0113/214507.947:ERROR:interface_endpoint_client.cc(658)] Message 1 rejected by interface blink.mojom.WidgetHost
+
+1월 14, 2022 10:26:37.423 NEW SESSION
+1월 14, 2022 10:26:37.423 [1792:10728:0114/102637.394:ERROR:chrome_browser_main_extra_parts_metrics.cc(227)] START: ReportBluetoothAvailability(). If you don't see the END: message, this is crbug.com/1216328.
+1월 14, 2022 10:26:37.424 [1792:10728:0114/102637.394:ERROR:chrome_browser_main_extra_parts_metrics.cc(230)] END: ReportBluetoothAvailability()
+1월 14, 2022 10:26:37.424 [1792:10728:0114/102637.394:ERROR:chrome_browser_main_extra_parts_metrics.cc(235)] START: GetDefaultBrowser(). If you don't see the END: message, this is crbug.com/1216328.
+1월 14, 2022 10:26:37.424 [1792:10728:0114/102637.397:ERROR:chrome_browser_main_extra_parts_metrics.cc(239)] END: GetDefaultBrowser()
+1월 14, 2022 10:26:37.424 [1792:12712:0114/102637.404:ERROR:device_event_log_impl.cc(214)] [10:26:37.404] USB: usb_device_handle_win.cc:1050 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+1월 14, 2022 10:26:37.425 [1792:12712:0114/102637.405:ERROR:device_event_log_impl.cc(214)] [10:26:37.405] USB: usb_device_handle_win.cc:1050 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+1월 14, 2022 10:55:59.84 [1792:12712:0114/105559.084:ERROR:interface_endpoint_client.cc(658)] Message 1 rejected by interface blink.mojom.WidgetHost
+1월 14, 2022 10:55:59.85 [1792:12712:0114/105559.084:ERROR:interface_endpoint_client.cc(658)] Message 1 rejected by interface blink.mojom.WidgetHost
+1월 14, 2022 11:30:29.751 [1792:12712:0114/113029.751:ERROR:interface_endpoint_client.cc(658)] Message 1 rejected by interface blink.mojom.WidgetHost
+1월 14, 2022 14:14:23.832 [1792:12712:0114/141423.831:ERROR:interface_endpoint_client.cc(658)] Message 1 rejected by interface blink.mojom.WidgetHost
+1월 14, 2022 15:14:31.368 [1792:12712:0114/151431.368:ERROR:interface_endpoint_client.cc(658)] Message 1 rejected by interface blink.mojom.WidgetHost
+1월 14, 2022 15:18:55.421 [1792:12712:0114/151855.420:ERROR:interface_endpoint_client.cc(658)] Message 1 rejected by interface blink.mojom.WidgetHost
+1월 14, 2022 15:18:55.421 [1792:12712:0114/151855.420:ERROR:interface_endpoint_client.cc(658)] Message 1 rejected by interface blink.mojom.WidgetHost

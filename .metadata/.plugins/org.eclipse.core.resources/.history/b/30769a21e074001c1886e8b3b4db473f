@@ -1,0 +1,13 @@
+#requestURI=Model
+/product/notice.asp=command.notice.NoticeHandler
+/product/noticeAsk.asp=command.notice.NoticeAskHandler
+/product/noticeFaq.asp=command.notice.NoticeFaqHandler
+/product/noticeCacao.asp=command.notice.NoticeCacaoHandler
+/product/cscenter.asp=command.notice.CsCenterHandler
+#/days09/replyboard/write.do=days09.replyboard.command.WriteHandler
+#/days09/replyboard/view.do=days09.replyboard.command.ContentHandler
+#/days09/replyboard/delete.do=days09.replyboard.command.DeleteHandler
+#/days09/replyboard/edit.do=days09.replyboard.command.EditHandler
+
+
+#/days08/guestbook/???.do=days08.guestbook.command.DeleteMessageHandler

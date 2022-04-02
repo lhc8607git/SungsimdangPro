@@ -1,0 +1,658 @@
+@charset "utf-8";
+
+/* Reset */
+@import url('/css/nanumgothic.css');
+@import url('/css/NotoSansKR.css');
+
+@font-face {
+ font-family: 'Campton_Medium';
+ src: url('/css/font/Campton-Medium.eot');
+ src: local(※),
+  url('/css/font/Campton-Medium.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('/css/font/Campton-Medium.woff') format('woff'),
+  url('/css/font/Campton-Medium.ttf') format('truetype'),
+  url('/css/font/Campton-Medium.svg#webfonturzspG4F') format('svg');
+}
+
+@font-face {
+ font-family: 'Campton-BoldDEMO';
+ src: url('/css/font/Campton-BoldDEMO.otf');
+ src: local(※),
+  url('/css/font/Campton-BoldDEMO.otf#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  /* url('/css/font/Campton-BoldDEMO.otf') format('woff'),
+  url('/css/font/Campton-BoldDEMO.otf') format('truetype'),
+  url('/css/font/Campton-BoldDEMO.otf#webfonturzspG4F') format('svg'); */
+}
+
+@font-face {
+ font-family: 'Campton-LightDEMO';
+ src: url('/css/font/Campton-LightDEMO.otf');
+ src: local(※),
+  url('/css/font/Campton-LightDEMO.otf#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  /* url('/css/font/Campton-BoldDEMO.otf') format('woff'),
+  url('/css/font/Campton-BoldDEMO.otf') format('truetype'),
+  url('/css/font/Campton-BoldDEMO.otf#webfonturzspG4F') format('svg'); */
+}
+
+
+@font-face {
+ font-family: 'mg';
+ src: url('/css/font/malgun.eot');
+ src: local(※),
+  url('/css/font/malgun.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('/css/font/malgun.woff') format('woff'),
+  url('/css/font/malgun.ttf') format('truetype'),
+  url('/css/font/malgun.svg#webfonturzspG4F') format('svg');
+}
+/*@font-face {
+ font-family: 'mgb';
+ src: url('/css/font/malgunbd.eot');
+ src: local(※),
+  url('/css/font/malgunbd.eot#iefix') format('embedded-opentype'), *//* IE6-IE8 */
+/*  url('/css/font/malgunbd.woff') format('woff'),
+  url('/css/font/malgunbd.ttf') format('truetype'),
+  url('/css/font/malgunbd.svg#webfonturzspG4F') format('svg');
+}*/
+
+@font-face {
+ font-family: 'BMJUA';
+ src: url('/css/font/BMJUA_ttf.eot');
+ src: local(※),
+  url('/css/font/BMJUA_ttf.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('/css/font/BMJUA.woff') format('woff'),
+  url('/css/font/BMJUA.ttf') format('truetype'),
+  url('/css/font/BMJUA.svg#webfonturzspG4F') format('svg');
+}
+
+@font-face {
+	font-family: 'NotoSansL';
+	src: url('/css/font/NotoSans-Light.eot');
+	src: local(※),
+	url('/css/font/NotoSans-Light.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	url('/css/font/NotoSans-Light.woff') format('woff'),
+	url('/css/font/NotoSans-Light.ttf') format('truetype'),
+	url('/css/font/NotoSans-Light.svg#webfonturzspG4F') format('svg');
+}
+
+@font-face {
+	font-family: 'NotoSansM';
+	src: url('/css/font/NotoSans-Medium.eot');
+	src: local(※),
+	url('/css/font/NotoSans-Medium.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	url('/css/font/NotoSans-Medium.woff') format('woff'),
+	url('/css/font/NotoSans-Medium.ttf') format('truetype'),
+	url('/css/font/NotoSans-Medium.svg#webfonturzspG4F') format('svg');
+}
+
+@font-face {
+	font-family: 'NotoSansB';
+	src: url('/css/font/NotoSans-Bold.eot');
+	src: local(※),
+	url('/css/font/NotoSans-Bold.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	url('/css/font/NotoSans-Bold.woff') format('woff'),
+	url('/css/font/NotoSans-Bold.ttf') format('truetype'),
+	url('/css/font/NotoSans-Bold.svg#webfonturzspG4F') format('svg');
+}
+
+@font-face {
+	font-family: 'MontserratR';
+	src: url('/css/font/Montserrat-Regular.eot');
+	src: local(※),
+	url('/css/font/Montserrat-Regular.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	url('/css/font/Montserrat-Regular.woff') format('woff'),
+	url('/css/font/Montserrat-Regular.ttf') format('truetype'),
+	url('/css/font/Montserrat-Regular.svg#webfonturzspG4F') format('svg');
+}
+
+@font-face {
+	font-family: 'MontserratB';
+	src: url('/css/font/Montserrat-Bold.eot');
+	src: local(※),
+	url('/css/font/Montserrat-Bold.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	url('/css/font/Montserrat-Bold.woff') format('woff'),
+	url('/css/font/Montserrat-Bold.ttf') format('truetype'),
+	url('/css/font/Montserrat-Bold.svg#webfonturzspG4F') format('svg');
+}
+
+@font-face {
+	font-family: 'NanumSquare';
+	src: url('/css/font/NanumSquareB.eot');
+	src: local(※),
+	url('/css/font/NanumSquareB.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	url('/css/font/NanumSquareB.woff') format('woff'),
+	url('/css/font/NanumSquareB.ttf') format('truetype'),
+	url('/css/font/NanumSquareB.svg#webfonturzspG4F') format('svg');
+}
+
+@font-face {
+	font-family: 'NanumSquareR';
+	src: url('/css/font/NanumSquareR.eot');
+	src: local(※),
+	url('/css/font/NanumSquareR.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	url('/css/font/NanumSquareR.woff') format('woff'),
+	url('/css/font/NanumSquareR.ttf') format('truetype'),
+	url('/css/font/NanumSquareR.svg#webfonturzspG4F') format('svg');
+}
+
+@font-face {
+	font-family: 'NanumSquareL';
+	src: url('/css/font/NanumSquareL.eot');
+	src: local(※),
+	url('/css/font/NanumSquareL.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	url('/css/font/NanumSquareL.woff') format('woff'),
+	url('/css/font/NanumSquareL.ttf') format('truetype'),
+	url('/css/font/NanumSquareL.svg#webfonturzspG4F') format('svg');
+}
+
+@font-face {
+	font-family: 'Spoqa Han Sans';
+	src: url('/css/font/Spoqa Han Sans Regular.ttf');
+	src: local(※),
+	url('/css/font/Spoqa Han Sans Regular.ttf') format('embedded-opentype'),
+	url('/css/font/Spoqa Han Sans Regular.ttf') format('woff'),
+	url('/css/font/Spoqa Han Sans Regular.ttf') format('truetype'),
+	url('/css/font/Spoqa Han Sans Regular.ttf') format('svg');
+}
+
+/*헬로펫*/
+@font-face {
+	font-family: 'OpenSansSB';
+	src: url('/css/font/OpenSans-Semibold.eot');
+	src: local(※),
+	url('/css/font/OpenSans-Semibold.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	url('/css/font/OpenSans-Semibold.woff') format('woff'),
+	url('/css/font/OpenSans-Semibold.ttf') format('truetype'),
+	url('/css/font/OpenSans-Semibold.svg#webfonturzspG4F') format('svg');
+}
+
+@font-face {
+    font-family: 'NotoSerif';
+    src: url('/css/font/NotoSerif.eot');
+    src: local(※),
+        url('/css/font/NotoSerif.eot?#iefix') format('embedded-opentype'),
+        url('/css/font/NotoSerif.woff2') format('woff2'),
+        url('/css/font/NotoSerif.woff') format('woff'),
+        url('/css/font/NotoSerif.ttf') format('truetype'),
+        url('/css/font/NotoSerif.svg#NotoSerif') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'NotoSerif';
+    src: url('/css/font/NotoSerif-Bold.eot');
+    src: local(※),
+        url('/css/font/NotoSerif-Bold.eot?#iefix') format('embedded-opentype'),
+        url('/css/font/NotoSerif-Bold.woff2') format('woff2'),
+        url('/css/font/NotoSerif-Bold.woff') format('woff'),
+        url('/css/font/NotoSerif-Bold.ttf') format('truetype'),
+        url('/css/font/NotoSerif-Bold.svg#NotoSerif-Bold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'NotoSerif-Italic';
+    src: url('/css/font/NotoSerif-Italic.eot');
+    src: local(※),
+        url('/css/font/NotoSerif-Italic.eot?#iefix') format('embedded-opentype'),
+        url('/css/font/NotoSerif-Italic.woff2') format('woff2'),
+        url('/css/font/NotoSerif-Italic.woff') format('woff'),
+        url('/css/font/NotoSerif-Italic.ttf') format('truetype'),
+        url('/css/font/NotoSerif-Italic.svg#NotoSerif-Italic') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'NotoSerif-Italic';
+    src: url('/css/font/NotoSerif-BoldItalic.eot');
+    src: local(※),
+        url('/css/font/NotoSerif-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('/css/font/NotoSerif-BoldItalic.woff2') format('woff2'),
+        url('/css/font/NotoSerif-BoldItalic.woff') format('woff'),
+        url('/css/font/NotoSerif-BoldItalic.ttf') format('truetype'),
+        url('/css/font/NotoSerif-BoldItalic.svg#NotoSerif-BoldItalic') format('svg');
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'S-Core Dream';
+    src: url('/css/font/S-CoreDream-1Thin.eot');
+    src: local(※),
+        url('/css/font/S-CoreDream-1Thin.eot?#iefix') format('embedded-opentype'),
+        url('/css/font/S-CoreDream-1Thin.woff2') format('woff2'),
+        url('/css/font/S-CoreDream-1Thin.woff') format('woff'),
+        url('/css/font/S-CoreDream-1Thin.ttf') format('truetype'),
+        url('/css/font/S-CoreDream-1Thin.svg#S-CoreDream-1Thin') format('svg');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'S-Core Dream';
+    src: url('/css/font/S-CoreDream-2ExtraLight.eot');
+    src: local(※),
+        url('/css/font/S-CoreDream-2ExtraLight.eot?#iefix') format('embedded-opentype'),
+        url('/css/font/S-CoreDream-2ExtraLight.woff2') format('woff2'),
+        url('/css/font/S-CoreDream-2ExtraLight.woff') format('woff'),
+        url('/css/font/S-CoreDream-2ExtraLight.ttf') format('truetype'),
+        url('/css/font/S-CoreDream-2ExtraLight.svg#S-CoreDream-2ExtraLight') format('svg');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'S-Core Dream';
+    src: url('/css/font/S-CoreDream-3Light.eot');
+    src: local(※),
+        url('/css/font/S-CoreDream-3Light.eot?#iefix') format('embedded-opentype'),
+        url('/css/font/S-CoreDream-3Light.woff2') format('woff2'),
+        url('/css/font/S-CoreDream-3Light.woff') format('woff'),
+        url('/css/font/S-CoreDream-3Light.ttf') format('truetype'),
+        url('/css/font/S-CoreDream-3Light.svg#S-CoreDream-3Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'S-Core Dream';
+    src: url('/css/font/S-CoreDream-4Regular.eot');
+    src: local(※),
+        url('/css/font/S-CoreDream-4Regular.eot?#iefix') format('embedded-opentype'),
+        url('/css/font/S-CoreDream-4Regular.woff2') format('woff2'),
+        url('/css/font/S-CoreDream-4Regular.woff') format('woff'),
+        url('/css/font/S-CoreDream-4Regular.ttf') format('truetype'),
+        url('/css/font/S-CoreDream-4Regular.svg#S-CoreDream-4Regular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'S-Core Dream';
+    src: url('/css/font/S-CoreDream-5Medium.eot');
+    src: local(※),
+        url('/css/font/S-CoreDream-5Medium.eot?#iefix') format('embedded-opentype'),
+        url('/css/font/S-CoreDream-5Medium.woff2') format('woff2'),
+        url('/css/font/S-CoreDream-5Medium.woff') format('woff'),
+        url('/css/font/S-CoreDream-5Medium.ttf') format('truetype'),
+        url('/css/font/S-CoreDream-5Medium.svg#S-CoreDream-5Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'S-Core Dream';
+    src: url('/css/font/S-CoreDream-6Bold.eot');
+    src: local(※),
+        url('/css/font/S-CoreDream-6Bold.eot?#iefix') format('embedded-opentype'),
+        url('/css/font/S-CoreDream-6Bold.woff2') format('woff2'),
+        url('/css/font/S-CoreDream-6Bold.woff') format('woff'),
+        url('/css/font/S-CoreDream-6Bold.ttf') format('truetype'),
+        url('/css/font/S-CoreDream-6Bold.svg#S-CoreDream-6Bold') format('svg');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'S-Core Dream';
+    src: url('/css/font/S-CoreDream-7ExtraBold.eot');
+    src: local(※),
+        url('/css/font/S-CoreDream-7ExtraBold.eot?#iefix') format('embedded-opentype'),
+        url('/css/font/S-CoreDream-7ExtraBold.woff2') format('woff2'),
+        url('/css/font/S-CoreDream-7ExtraBold.woff') format('woff'),
+        url('/css/font/S-CoreDream-7ExtraBold.ttf') format('truetype'),
+        url('/css/font/S-CoreDream-7ExtraBold.svg#S-CoreDream-7ExtraBold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'S-Core Dream';
+    src: url('/css/font/S-CoreDream-8Heavy.eot');
+    src: local(※),
+        url('/css/font/S-CoreDream-8Heavy.eot?#iefix') format('embedded-opentype'),
+        url('/css/font/S-CoreDream-8Heavy.woff2') format('woff2'),
+        url('/css/font/S-CoreDream-8Heavy.woff') format('woff'),
+        url('/css/font/S-CoreDream-8Heavy.ttf') format('truetype'),
+        url('/css/font/S-CoreDream-8Heavy.svg#S-CoreDream-8Heavy') format('svg');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'S-Core Dream';
+    src: url('/css/font/S-CoreDream-9Black.eot');
+    src: local(※),
+        url('/css/font/S-CoreDream-9Black.eot?#iefix') format('embedded-opentype'),
+        url('/css/font/S-CoreDream-9Black.woff2') format('woff2'),
+        url('/css/font/S-CoreDream-9Black.woff') format('woff'),
+        url('/css/font/S-CoreDream-9Black.ttf') format('truetype'),
+        url('/css/font/S-CoreDream-9Black.svg#S-CoreDream-9Black') format('svg');
+    font-weight: 900;
+    font-style: normal;
+}
+
+/* normal */
+@font-face{font-family:'NotoSans';font-style:normal;font-weight:normal;src:url('/css/font/notokr-regular.eot');src:local(※),url('/css/font/notokr-regular.eot?#iefix') format('embedded-opentype'),url('/css/font/notokr-regular.woff') format('woff'),url('/css/font/notokr-regular.ttf') format('truetype');}
+/* demilight */
+@font-face {font-family:'NotoSansDL';font-style:normal;font-weight:100;src:url('/css/font/notokr-demilight.eot');src:local(※),url('/css/font/notokr-demilight.eot?#iefix') format('embedded-opentype'),url('/css/font/notokr-demilight.woff') format('woff'),url('/css/font/notokr-demilight.ttf') format('truetype');}
+/* medium */
+@font-face {font-family:'NotoSansM';font-style:normal;font-weight:500;src:url('/css/font/notokr-medium.eot');src:local(※),url('/css/font/notokr-medium.eot?#iefix') format('embedded-opentype'),url('/css/font/notokr-medium.woff') format('woff'),url('/css/font/notokr-medium.ttf') format('truetype');}
+/* bold */
+@font-face {font-family:'NotoSansBD';font-style:normal;font-weight:bold;src:url('/css/font/notokr-bold.eot');src:local(※),url('/css/font/notokr-bold.eot?#iefix') format('embedded-opentype'),url('/css/font/notokr-bold.woff') format('woff'),url('/css/font/notokr-bold.ttf') format('truetype');}
+/* black */
+@font-face {font-family:'NotoSansBL';font-style:normal;font-weight:800;src:url('/css/font/notokr-black.eot');src:local(※),url('/css/font/notokr-black.eot?#iefix') format('embedded-opentype'),url('/css/font/notokr-black.woff') format('woff'),url('/css/font/notokr-black.ttf') format('truetype');}
+
+/* @font-face {
+ font-family: 'SJR';
+ src: url('/css/font/SJJungRA.ttf');
+ src: local(※),
+  url('/css/font/sjr.eot#iefix') format('embedded-opentype'), /*IE6-IE8* /
+  url('/css/font/SJJungRA.woff') format('woff'),
+  url('/css/font/SJJungRA.ttf') format('truetype'),
+  url('/css/font/SJJungRA.svg#webfonturzspG4F') format('svg');
+} */
+
+/*@font-face{font-family:ng;font-style:normal;font-weight:normal;src:local('NanumGothic'),local('나눔고딕'),url(addons/webfont/font/ng.woff) format('woff')}*/
+/*@font-face{font-family:ng;font-style:normal;font-weight:bold;src:local('NanumGothic'),local('+*/
+/* '나눔고딕'),url(addons/webfont/font/ngb.woff) format('woff')}*/
+
+
+/* 통합 아이콘 */
+@font-face {
+  font-family: "iconfont";
+  src: url('/css/font/iconfont.eot'); /* IE9*/
+  src: local(※),
+  url('/css/font/iconfont.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('/css/font/iconfont.woff') format('woff'), /* chrome, firefox */
+  url('/css/font/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('/css/font/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+.ftic-local:before { content: "\e600"; } /* 로컬 */
+.ftic-home:before { content: "\e601"; } /* 홈 */
+.ftic-mypage:before { content: "\e602"; } /* 마이페이지 */
+.ftic-like:before { content: "\e606"; } /* 좋아요&찜한상품 */
+.ftic-like2:before { content: "\e626"; } /* 좋아요2&찜한상품2 */
+.ftic-zan:before { content: "\e62e"; } /* 엄지, 좋아요 */
+.ftic-cart:before { content: "\e604"; } /* 장바구니 */
+.ftic-cart2:before { content: "\e63c"; } /*장바구니2*/
+.ftic-fax:before { content: "\e61e"; } /* 팩스 */
+.ftic-set:before { content: "\e60f"; } /* 설정 */
+.ftic-del:before { content: "\e612"; } /* 삭제 */
+.ftic-pc:before { content: "\e60e"; } /* PC */
+.ftic-cmt:before { content: "\e617"; } /* 댓글 */
+.ftic-tel:before { content: "\e61d"; } /* 전화 */
+.ftic-warning:before { content: "\e61f"; } /* 경고 */
+.ftic-coupon:before { content: "\e609"; } /* 쿠폰1 */
+.ftic-coupon2:before { content: "\e60a"; } /* 쿠폰2 */
+.ftic-write:before { content: "\e614"; }  /* 편집,쓰기 */
+.ftic-search:before { content: "\e613"; } /* 검색 */
+.ftic-search2:before { content: "\e637"; } /* 검색 Bold */
+.ftic-close:before { content: "\e60d"; } /* 닫기 */
+.ftic-coupon-list:before { content: "\e618"; } /* 쿠폰사용내역 */
+.ftic-id:before { content: "\e60b"; } /* 아이디 */
+.ftic-distribution:before { content: "\e608"; } /* 배송 */
+.ftic-fail:before { content: "\e620"; } /* 실패 */
+.ftic-intro:before { content: "\e611"; } /* 회사소개 */
+.ftic-cscenter:before { content: "\e619"; } /* 고객센터 */
+.ftic-member-list:before { content: "\e61a"; } /* 회원리스트 */
+.ftic-lately:before { content: "\e607"; } /* 최근 본 상품 */
+.ftic-watch:before { content: "\e635"; } /* 시계 */
+.ftic-fund:before { content: "\e61b"; } /* 적립금 */
+.ftic-faqqna:before { content: "\e60c"; } /* FAQ,QNA */
+.ftic-gotop:before { content: "\e610"; } /* 위로가기 */
+.ftic-qmark:before { content: "\e622"; } /* 물음표 */
+.ftic-inquire:before { content: "\e61c"; } /* 1:1문의하기 */
+.ftic-allmenu:before { content: "\e603"; } /* 전체메뉴,카테고리 */
+.ftic-pw:before { content: "\e616"; } /* 비밀번호 */
+.ftic-join:before { content: "\e615"; } /* 회원가입 */
+.ftic-telfax:before { content: "\e621"; } /* 전화&팩스 */
+.ftic-other:before { content: "\e605"; } /* 기타 */
+.ftic-prompt:before { content: "\e623"; } /* 주의 */
+.ftic-success:before { content: "\e624"; } /* 성공 */
+.ftic-fenxiang:before { content: "\e62b"; } /* 공유하기1 */
+.ftic-fenxiang2:before { content: "\e627"; } /* 공유하기2 */
+.ftic-back:before { content: "\e62d"; } /* 이전 */
+.ftic-next:before { content: "\e625"; } /* 다음 */
+.ftic-next2:before { content: "\e62a"; } /* 다음2 */
+.ftic-top:before { content: "\e62c"; } /* 위 */
+.ftic-bottom:before { content: "\e629"; } /* 아래 */
+.ftic-card:before { content: "\e628"; } /* 카드 */
+.ftic-staron:before { content: "\e630"; } /* 별on */
+.ftic-staroff:before { content: "\e62f"; } /* 별off */
+.ftic-star05:before { content: "\e636"; } /* 반별 */
+.ftic-phone:before { content: "\e631"; } /* 핸드폰 */
+.ftic-login:before { content: "\e633"; } /* 등록 */
+.ftic-logout:before { content: "\e632"; } /* 탈퇴 */
+.ftic-calendar:before { content: "\e634"; } /* 달력 */
+.ftic-list:before { content: "\e63a"; } /* list */
+.ftic-list1:before { content: "\e63b"; } /* list1 */
+.ftic-list2:before { content: "\e63f"; } /* list2 */
+.ftic-list3:before { content: "\e63e"; } /* list3 */
+.ftic-gallery:before { content: "\e638"; } /* 겔러리 */
+.ftic-Favorites:before { content: "\e639"; } /*즐겨찾기 깃발모양*/
+
+body, h1, h2, h3, h4, h5, h6,
+div, p, blockquote, pre, address,
+ul, ol, li, dl, dt, dd,
+table, caption, th, td,
+form, fieldset, legend,
+hr {
+	margin:0;
+	padding:0;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-size:100%;
+}
+ul, ol {
+	list-style:none;
+}
+li {
+	list-style:none;
+}
+table {
+	margin:0;
+	padding:0;
+	border-spacing:0;
+	border:0;
+}
+*+html table {border-collapse:collapse;}
+img, fieldset {
+	border:0;
+}
+address, caption, cite, code, dfn, em, var {
+	font-style:normal;
+	font-weight:normal;
+}
+
+input, select, button, textarea {
+	color:#2e2e2e;
+	font-size:100%;
+	font-family: Arial, 'Noto Sans KR', 'Malgun Gothic', 'dotum', sans-serif;
+	vertical-align:middle;
+}
+
+/* Base */
+body {
+	color:#2e2e2e;
+	font-size:12px;
+	font-family: 'Noto Sans KR', Arial, 'Malgun Gothic', 'dotum', sans-serif;
+}
+caption, legend {
+	width:0;
+	height:0;
+	font-size:0;
+	line-height:0;
+	overflow:hidden;
+	visibility:hidden;
+}
+a {
+	color:#2e2e2e;
+	text-decoration:none;
+}
+a:focus, a:hover, a:active {
+	text-decoration:none;
+}
+
+label,
+button {
+	cursor:pointer;
+}
+textarea, pre {
+	overflow:auto;
+}
+img {
+	vertical-align:middle;
+	/* height:auto; */
+}
+fieldset {
+	display:block;
+}
+
+/*html5*/
+article, aside, dialog, footer, header, section, nav, figure, menu {
+	display:block;
+}
+
+body {overflow-x:hidden !important;}
+
+/*------------------------------------------------------------------통합 css --------------------------------------------------------------------------*/
+
+/*스카이베너 css*/
+#right_bn_wrap {bottom: 0;display: none;overflow: hidden;position: fixed;right: 0;top: 0;z-index: 99990;}
+#leftFloating, #rightFloating {cursor: pointer;left: 10%;position: fixed;top: 500px;z-index: 100;}
+.sm_right_bn_05 {cursor: pointer;float: left;margin-top: 270px;}
+#right_con {float: left;margin-top: 137px;}
+#canvasTodayGoodsList > div{ margin:2px auto;}
+/*스카이베너 css*/
+
+/* main test delete */
+
+/* 가격 폰트 */
+.prc, .mkprc, .pct {font-family:NotoSansM,sans-serif;}
+
+/*--------------------버튼버튼18.09.27추가--------------------*/
+/*작은(px)*/
+.btn_ssty1 {display:inline-block; vertical-align:middle; width:60px; box-sizing:border-box; font-size:12px; line-height:36px; text-align:center; font-weight:bold; color:#000; background:#faf9f7; border:1px solid #e0e0e0; cursor:pointer;}/*가로60*/
+.btn_ssty2 {display:inline-block; vertical-align:middle; width:80px; box-sizing:border-box; font-size:12px; line-height:36px; text-align:center; font-weight:bold; color:#000; background:#faf9f7; border:1px solid #e0e0e0; cursor:pointer;}/*가로80*/
+.btn_ssty3 {display:inline-block; vertical-align:middle; width:100px; box-sizing:border-box; font-size:12px; line-height:36px; text-align:center; font-weight:bold; color:#000; background:#faf9f7; border:1px solid #e0e0e0; cursor:pointer;}/*가로100*/
+.btn_ssty4 {display:inline-block; vertical-align:middle; width:120px; box-sizing:border-box; font-size:12px; line-height:36px; text-align:center; font-weight:bold; color:#000; background:#faf9f7; border:1px solid #e0e0e0; cursor:pointer;}/*가로120*/
+.btn_ssty5 {display:inline-block; vertical-align:middle; width:140px; box-sizing:border-box; font-size:12px; line-height:36px; text-align:center; font-weight:bold; color:#000; background:#faf9f7; border:1px solid #e0e0e0; cursor:pointer;}/*가로140*/
+.btn_ssty6 {display:inline-block; vertical-align:middle; width:160px; box-sizing:border-box; font-size:12px; line-height:36px; text-align:center; font-weight:bold; color:#000; background:#faf9f7; border:1px solid #e0e0e0; cursor:pointer;}/*가로160*/
+
+/*큰(px)*/
+.btn_bsty1 {display:inline-block; vertical-align:middle; width:210px; box-sizing:border-box; font-size:15px; line-height:56px; font-weight:bold; text-align:center; color:#fff; background:#92979b; cursor:pointer;}/*가로210*/
+
+/*패딩*/
+.btn_psty1 {display:inline-block; vertical-align:middle; box-sizing:border-box; padding:0 10px; color:#000; font-size:12px; line-height:26px; text-align:center; font-weight:bold; background:#fff; cursor:pointer;}
+.btn_psty2 {display:inline-block; vertical-align:middle; box-sizing:border-box; padding:0 20px; color:#fff; font-size:15px; line-height:46px; font-weight:bold; text-align:center; background:#92979b; cursor:pointer;}
+.btn_psty3 {display:inline-block; vertical-align:middle; box-sizing:border-box; padding:0 30px; color:#fff; font-size:15px; line-height:46px; font-weight:bold; text-align:center; background:#92979b; cursor:pointer;}
+
+/*퍼센트*/
+.btn_wsty1 {display:inline-block; vertical-align:middle; box-sizing:border-box; width:10%; color:#fff; font-size:12px; line-height:2; text-align:center; font-weight:bold; background:#92979b; cursor:pointer;}/*가로10%*/
+.btn_wsty2 {display:inline-block; vertical-align:middle; box-sizing:border-box; width:20%; color:#fff; font-size:12px; line-height:2; text-align:center; font-weight:bold; background:#92979b; cursor:pointer;}/*가로20%*/
+.btn_wsty3 {display:inline-block; vertical-align:middle; box-sizing:border-box; width:30%; color:#fff; font-size:12px; line-height:2.5; text-align:center; font-weight:bold; background:#92979b; cursor:pointer;}/*가로30%*/
+.btn_wsty4 {display:inline-block; vertical-align:middle; box-sizing:border-box; width:40%; color:#fff; font-size:12px; line-height:2.5; text-align:center; font-weight:bold; background:#92979b; cursor:pointer;}/*가로40%*/
+.btn_wsty5 {display:inline-block; vertical-align:middle; box-sizing:border-box; width:50%; color:#fff; font-size:12px; line-height:2.5; text-align:center; font-weight:bold; background:#92979b; cursor:pointer;}/*가로50%*/
+.btn_wsty6 {display:inline-block; vertical-align:middle; box-sizing:border-box; width:60%; color:#fff; font-size:12px; line-height:2.5; text-align:center; font-weight:bold; background:#92979b; cursor:pointer;}/*가로60%*/
+.btn_wsty7 {display:inline-block; vertical-align:middle; box-sizing:border-box; width:70%; color:#fff; font-size:12px; line-height:2.5; text-align:center; font-weight:bold; background:#92979b; cursor:pointer;}/*가로70%*/
+.btn_wsty8 {display:inline-block; vertical-align:middle; box-sizing:border-box; width:80%; color:#fff; font-size:12px; line-height:3; text-align:center; font-weight:bold; background:#92979b; cursor:pointer;}/*가로80%*/
+.btn_wsty9 {display:inline-block; vertical-align:middle; box-sizing:border-box; width:90%; color:#fff; font-size:12px; line-height:3; text-align:center; font-weight:bold; background:#92979b; cursor:pointer;}/*가로90%*/
+.btn_wsty10 {display:block; box-sizing:border-box; width:100%; color:#fff; font-size:12px; line-height:3; text-align:center; font-weight:bold; background:#92979b; cursor:pointer;}/*가로100%*/
+
+/*배경*/
+
+    color: black;}
+.bgwhite {background:#fff;}
+.bgblack {background:#000;}
+.bgred {background:#f00;}
+.bgblue {background:#00f;}
+
+.bg2196f3 {background:#2196F3;}/*관리자연한파란버튼색*/
+.bg418db {background:#4181db;}/*관리자진한파란버튼색*/
+.bg5e0d8b {background:#5E0D8B;}/*관리자보라버튼색*/
+.bgf0 {background:#f0f0f0;}/*데모연한회색버튼색*/
+.bgd5 {background:#d5d5d5;}/*데모중간회색버튼색*/
+.bg92979b {background:#92979b;}/*데모진한회색버튼색*/
+
+/*컬러*/
+.clrwhite {color:#fff;}
+.clrblack {color:#000;}
+
+/*보더*/
+.btn_bd5 {border-radius:5px;}
+.btn_bd10 {border-radius:10px;}
+.btn_bd15 {border-radius:15px;}
+.btn_bd20 {border-radius:20px;}
+.btn_bd50 {border-radius:50%;}
+.btn_bdsty1 {border:1px solid #000;}
+.btn_bdsty2 {border-right:1px solid #c2c2c2; border-bottom:1px solid #c2c2c2;}
+
+/*그림자*/
+.btn_sd1 {text-align:center; -webkit-box-shadow:0 0 10px rgba(0,0,0,.3); -moz-box-shadow:0 0 10px rgba(0,0,0,.3); box-shadow:0 0 10px rgba(0,0,0,.3);}
+.btn_sd2 {text-align:center; -webkit-box-shadow:1px 2px 5px rgba(0,0,0,.3); -moz-box-shadow:1px 2px 5px rgba(0,0,0,.3); box-shadow:1px 2px 5px rgba(0,0,0,.3);}
+.btn_sd3 {text-align:center; -webkit-box-shadow:0 0 15px rgba(0,0,0,.2); -moz-box-shadow:0 0 15px rgba(0,0,0,.2); box-shadow:0 0 10px rgba(0,0,0,.2);}
+
+/*사이즈*/
+.btn_size1 {}
+
+/*패딩*/
+.btn_pd5 {padding:5px;}
+.btn_pd10 {padding:10px;}
+.btn_pd15 {padding:15px;}
+.btn_pd20 {padding:20px;}
+
+/*디스플레이*/
+.btn_dp1 {display:inline-block;}
+.btn_dp2 {display:block;}
+
+/*진하게*/
+.fw_bold {font-weight:bold;}
+
+/*스크롤*/
+html {
+scrollbar-arrow-color:#aaa;
+scrollbar-base-color:#fff;
+scrollbar-3dlight-color:#fff;
+scrollbar-darkshadow-color:#fff;
+scrollbar-face-color:#aaa;
+scrollbar-highlight-color:#fff;
+scrollbar-shadow-color:#fff;
+scrollbar-track-color:#fff;
+}
+
+::-webkit-scrollbar {
+width:10px;height:0px;
+border:0;
+}
+
+::-webkit-scrollbar-track {
+background : #fff;
+-webkit-border-radius:0px;
+border-radius:0px;
+}
+
+::-webkit-scrollbar-thumb {
+height:2px;width:50px;
+background:#aaa;
+-webkit-border-radius:0px;
+border-radius:0px;
+}
+/*--------------------버튼--------------------*/
+
+/* 데모 공통 상단 앱다운로드, 즐겨찾기 숨김 */
+.utilWrap .utilBox .addSite, .utilWrap .utilBox .appDownload{display:none;}
+/* 데모 공통 상단 장바구니 수평정렬 */
+.utilWrap .utilBox .util > a span.ftic-cart{display:inline-block; margin-top:-2px;}
+.utilWrap .utilBox .util > a:nth-last-child(2){line-height:34px;}
+/* 데모 공통 상단 출석체크 숨김  */
+.utilBox .util > a.inList:last-child{display:none;}

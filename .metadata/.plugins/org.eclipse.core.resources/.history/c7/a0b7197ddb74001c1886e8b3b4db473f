@@ -1,0 +1,42 @@
+package service;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.List;
+
+import javax.naming.NamingException;
+
+import com.util.ConnectionProvider;
+import com.util.JdbcUtil;
+
+import domain.ProductDTO;
+import persistence.ProductDAOImpl;
+
+public class ProductService {
+
+	private ProductService() {}
+	private static ProductService instance = new ProductService();
+	
+	public static ProductService getInstance() {
+		return instance;
+	}
+	
+	public List<ProductDTO> bestList(){
+		
+		Connection con = null;
+		try {
+			con = ConnectionProvider.getConnection();
+			ProductDAOImpl dao = ProductDAOImpl.getInstance();
+			List<ProductDTO> list = null;
+			list = dao.bestList(con);
+			return list;
+		} catch (NamingException | SQLException e) {
+			//e.printStackTrace();
+			throw new RuntimeException(e);
+		} finally {
+			JdbcUtil.close(con);
+		}
+	}
+	
+
+}

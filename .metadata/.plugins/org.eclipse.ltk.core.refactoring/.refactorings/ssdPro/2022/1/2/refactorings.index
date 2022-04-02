@@ -1,0 +1,48 @@
+1641377186943	Rename resource 'mddle'
+1641377309047	Move 'jscript' to 'webapp'
+1641382903425	Move 'context.xml' to 'META-INF'
+1641385052854	Delete element
+1641443734303	Delete element
+1641444197718	Delete element
+1641444615576	Rename resource 'list.asp'
+1641444654865	Rename resource 'deliveryList.jsp'
+1641452296702	Rename resource 'images'
+1641458029072	Delete element
+1641462316718	Move 'commandHandler.properties' to 'webapp'
+1641462403847	Delete element
+1641462405186	Delete element
+1641462479485	Delete element
+1641462864196	Move 'main.jsp' to 'webapp'
+1641463077666	Delete element
+1641463107133	Copy compilation unit
+1641463133622	Delete element
+1641463166796	Copy compilation unit
+1641463170349	Delete element
+1641463302456	Rename resource 'test.jsp'
+1641464891761	Move 'images' to 'css'
+1641520061130	Delete elements
+1641520376999	Move compilation unit
+1641520405850	Delete element
+1641520419496	Delete element
+1641521282356	Copy compilation units
+1641521289928	Delete element
+1641521297925	Copy compilation unit
+1641521302070	Copy compilation units
+1641521308167	Delete element
+1641521309659	Delete element
+1641521315082	Copy compilation unit
+1641521319076	Delete element
+1641521347542	Copy compilation unit
+1641521350413	Delete element
+1641521351497	Delete element
+1641521581529	Rename package 'comtroller'
+1641522665559	Delete element
+1641522692486	Rename resource 'main.jsp'
+1641522803686	Delete element
+1641525061383	Rename resource 'Default.asp'
+1641525214427	Delete element
+1641540597339	Delete element
+1641563494038	Copy compilation unit
+1641570970025	Delete element
+1641575742863	Rename type 'ICheckId'
+1641576467208	Rename local variable 'idChcek'

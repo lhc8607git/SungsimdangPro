@@ -1,0 +1,54 @@
+■기본키 번호 (예시)■
+01 - 1대1문의                inquire
+02 - 1대1문의관리          inquireManage
+03 - FAQ                      faq
+04 - 공지사항                notice
+05 - 관리자                   manager
+------------------
+06 - 광고                      AD
+07 - 교환AS내역            exchangeList
+08 - 기프티콘주문          giftOrder
+09 - 매장                      store
+10 - 모바일상품교환권    exchCoupon
+-------------------
+11 - 배송가능분류          shipOption
+12 - 배송지목록             desList  
+13 - 배송지정보             desInfo
+14 - 베스트                   bestPrd         (엑셀 : 임의로 데이터 넣음)
+15 - 보유적립금             mileage
+-------------------
+16 - 보유쿠폰                holdCoupon
+17 - 불편사항종류          claimType
+18 - 사용가능쿠폰          availCoupon
+19 - 상품                      product
+20 - 상품관리                prdManage
+-------------------
+21 - 상품이미지               imgPrd  
+22 - 상품Q&A                 prdQna   
+23 - 상품Q&A관리           prdQnaManage  
+24 - 상품보관함(좋아요)    wishList 
+25 - 신상품                     newPrd 
+-------------------
+26 - 
+27 - 장바구니                  cart
+28 - 
+29 - 적립금종류               mileageKind
+30 - 주문                        prdOrder
+-------------------
+31 - 주문배송내역            orderList
+32 - 주문관리                  orderManage  
+33 - 지난쿠폰                  pastCoupon 
+34 - 최근본상품               lastView
+35 - 취소반품환불내역      returnList
+-------------------
+36 -
+37 - 카테고리대              mainCategoty
+38 - 카테고리중              category
+39 - 쿠폰관리                 couponManage
+40 - 할인쿠폰                 DCCoupon 
+-------------------
+41 - 회원                       member
+42 - 회원등급                 memberGrade 
+43 - 회원탈퇴                 withdrawal
+44 - 상품평                    prdReview
+45 - 배송관리                 deliManage

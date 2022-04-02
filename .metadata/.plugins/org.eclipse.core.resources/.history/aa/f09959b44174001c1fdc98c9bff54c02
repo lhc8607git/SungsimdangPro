@@ -1,0 +1,23 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>	
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	${sessionScope.memb_code }
+	<a href="product/sublist.asp">상품리스트</a>
+	<br />
+	<a href="member/regist_agree.asp">회원가입</a>
+	<br />
+	<a href="member/login.asp">로그인</a>
+	<br />
+	<a href="my/order_total.asp">주문배송조회</a>
+	<br />
+<!-- 	<a href="cscenter.asp">장바구니</a> -->
+<!-- 	<br /> -->
+</body>
+</html>

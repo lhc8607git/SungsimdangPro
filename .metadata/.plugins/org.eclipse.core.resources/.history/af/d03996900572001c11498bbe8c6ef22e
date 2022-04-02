@@ -1,0 +1,41 @@
+package command.member;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import command.CommandHandler;
+import domain.Member;
+import persistence.MemberDAO;
+
+public class JoinHandler implements CommandHandler {
+
+	@Override
+	public String process(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		String memb_code = request.getParameter("id");   
+		String password = request.getParameter("pass");   
+		String name = request.getParameter("name");       
+		String email = request.getParameter("emailID");      
+		String tel = request.getParameter("tel");        
+		String phone = request.getParameter("mobile");      
+		String address = request.getParameter("addr") + " " + request.getParameter("addrDetail");    
+//		Date birth_date    
+		String gender = request.getParameter("gender");     
+//		int is_sms         
+//		int is_email       
+//		create_date        
+		
+		Member member = new Member();
+		MemberDAO dao = new MemberDAO();
+		member.setMemb_code(memb_code);
+		member.setPassword(password);
+		member.setName(name);
+		member.setEmail(email);
+		member.setTel(tel);
+		member.setPhone(phone);
+		member.setAddress(address);
+		member.setGender(gender);
+		
+		dao.join(member);
+		return "/member/join";
+	}
+}
